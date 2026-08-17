@@ -1,0 +1,41 @@
+---
+description: Update docs/plan.md checklists when build-plan tasks are completed
+alwaysApply: true
+---
+
+# Plan Progress Tracker (`docs/plan.md`)
+
+`docs/plan.md` is the single progress tracker for this project. Every agent must keep it current.
+
+## When to update
+
+After completing work that maps to one or more checklist items in `docs/plan.md`:
+
+1. Open `docs/plan.md`.
+2. Change every finished item from `- [ ]` to `- [x]`.
+3. Include the `docs/plan.md` edit in the same session/PR as the implementation — not as a follow-up.
+
+## Scope of ticking
+
+- Tick only items that are **fully done** per the plan's definition of done (see `CLAUDE.md`).
+- If a task partially covers an item, leave it unchecked and note what remains.
+- If you intentionally skip or defer an item, do **not** tick it; leave a brief note in the plan or tell the user why.
+- Nested checklist items under a parent must be ticked individually when complete.
+
+## Do not
+
+- Mark items complete before the work is verified (build/lint/migration/seed passes where applicable).
+- Remove or rewrite plan items without being asked.
+- Create a separate progress file — `docs/plan.md` stays authoritative.
+
+## Example
+
+```markdown
+- [ ] Run first Prisma migration
+```
+
+after migration succeeds:
+
+```markdown
+- [x] Run first Prisma migration
+```
