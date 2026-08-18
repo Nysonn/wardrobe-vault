@@ -1,4 +1,4 @@
-import { PayoutStatus } from "@/lib/generated/prisma/client";
+import { PayoutStatus } from "@/lib/generated/prisma/enums";
 
 /**
  * Seller payout status transitions (Phase 1.1).

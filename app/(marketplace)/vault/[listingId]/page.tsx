@@ -113,6 +113,10 @@ export default async function ListingDetailPage({ params }: PageProps) {
   }
 
   const isSold = listing.status === ListingStatus.SOLD;
+  const isPublished = listing.status === ListingStatus.PUBLISHED;
+  const isOwnListing = session?.user?.id === listing.seller.id;
+  const checkoutHref = `/checkout/${listing.id}`;
+  const loginHref = `/login?callbackUrl=${encodeURIComponent(checkoutHref)}`;
   const purchaseDocuments = listing.documents.filter(
     (doc) => doc.type === ListingDocumentType.PROOF_OF_PURCHASE,
   );
@@ -195,6 +199,20 @@ export default async function ListingDetailPage({ params }: PageProps) {
                 <p className="mt-6 font-heading text-2xl text-foreground">
                   {formatUgx(listing.price)}
                 </p>
+
+                {isPublished && !isOwnListing && (
+                  <div className="mt-6">
+                    {session?.user?.id ? (
+                      <Button size="lg" render={<Link href={checkoutHref} />}>
+                        Purchase
+                      </Button>
+                    ) : (
+                      <Button size="lg" render={<Link href={loginHref} />}>
+                        Sign in to purchase
+                      </Button>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Item details */}
@@ -390,6 +408,17 @@ export default async function ListingDetailPage({ params }: PageProps) {
 
           {/* Footer actions */}
           <div className="mt-14 flex flex-wrap items-center gap-4 border-t border-border pt-10">
+            {isPublished && !isOwnListing && (
+              session?.user?.id ? (
+                <Button render={<Link href={checkoutHref} />}>
+                  Purchase
+                </Button>
+              ) : (
+                <Button render={<Link href={loginHref} />}>
+                  Sign in to purchase
+                </Button>
+              )
+            )}
             <Button variant="outline" render={<Link href="/vault" />}>
               Continue browsing
             </Button>

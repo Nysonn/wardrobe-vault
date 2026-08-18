@@ -189,37 +189,37 @@ for this project.
 
 ## Phase 7 — Checkout → Mock Payment → Order Creation
 
-- [ ] `PaymentProvider` interface in `lib/payments/` + `MockPaymentProvider` implementation —
+- [x] `PaymentProvider` interface in `lib/payments/` + `MockPaymentProvider` implementation —
       mock must go through the same pending → confirmed/failed transitions a real gateway would,
       never silently short-circuit to "success" (AGENTS.md §1, master prompt §21)
-- [ ] `calculateOrderTotals()` pure function in `lib/services/orders/` — single source of truth for
+- [x] `calculateOrderTotals()` pure function in `lib/services/orders/` — single source of truth for
       price, commission, shipping, total; server-side only (tech-spec §Gaps.6)
-- [ ] Manual test cases for `calculateOrderTotals()` covering standard, edge, and promotional
+- [x] Manual test cases for `calculateOrderTotals()` covering standard, edge, and promotional
       commission scenarios (tech-spec §Gaps.6)
-- [ ] Checkout review screen: item, seller, commission (if shown to buyer per business rules),
+- [x] Checkout review screen: item, seller, commission (if shown to buyer per business rules),
       shipping fee, total — all values re-fetched/re-validated server-side (§18, §43)
-- [ ] Buyer cannot alter order total under any circumstance (AGENTS.md §2, §49)
-- [ ] Order creation: unique order ID, buyer, seller, item, price, commission, shipping, total,
+- [x] Buyer cannot alter order total under any circumstance (AGENTS.md §2, §49)
+- [x] Order creation: unique order ID, buyer, seller, item, price, commission, shipping, total,
       payment status, fulfillment status, payout status, dates, tracking (§23)
-- [ ] Funds recorded as held by platform, not seller, until conditions met (§18)
-- [ ] Order status state machine enforced (Order Placed → Payment Confirmed → Awaiting Seller →
+- [x] Funds recorded as held by platform, not seller, until conditions met (§18)
+- [x] Order status state machine enforced (Order Placed → Payment Confirmed → Awaiting Seller →
       Shipped → In Transit → Delivered → Completed, plus Disputed/Cancelled) (§22)
-- [ ] Seller cannot mark own order as paid — only mock payment provider or admin action (§49)
+- [x] Seller cannot mark own order as paid — only mock payment provider or admin action (§49)
 
 ---
 
 ## Phase 8 — Seller Wallet / Payout View + Admin Payout Approval
 
-- [ ] Seller wallet page: sale amount, commission, net earnings, payout status per order (§20)
-- [ ] `lib/services/payouts/` business logic — payout status transitions only via platform/admin,
+- [x] Seller wallet page: sale amount, commission, net earnings, payout status per order (§20)
+- [x] `lib/services/payouts/` business logic — payout status transitions only via platform/admin,
       never seller-initiated (AGENTS.md §2, §49)
-- [ ] Admin payout queue: pending / approved / processing / paid / failed / on hold
-- [ ] Admin approve/process payout action — writes `AdminAction` audit log entry
-- [ ] Financial transparency: full breakdown stored per transaction (item price, commission,
+- [x] Admin payout queue: pending / approved / processing / paid / failed / on hold
+- [x] Admin approve/process payout action — writes `AdminAction` audit log entry
+- [x] Financial transparency: full breakdown stored per transaction (item price, commission,
       shipping, buyer total, seller earnings, platform revenue) (§43)
-- [ ] Admin commission settings UI: default / seller-specific / promotional / category-specific,
+- [x] Admin commission settings UI: default / seller-specific / promotional / category-specific,
       configurable — never hardcoded (§19)
-- [ ] Commission changes write `AdminAction` audit log entry
+- [x] Commission changes write `AdminAction` audit log entry
 
 ---
 

@@ -1,16 +1,16 @@
 # Graph Report - wardrobe-web-app  (2026-08-18)
 
 ## Corpus Check
-- 118 files · ~38,178 words
+- 155 files · ~47,172 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 736 nodes · 1365 edges · 51 communities (39 shown, 12 thin omitted)
+- 893 nodes · 1798 edges · 54 communities (42 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2d849195`
+- Built from commit: `dbc2b958`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -56,41 +56,44 @@
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 104 edges
 2. `Wardrobe Vault — Master Development Prompt` - 54 edges
-3. `Button()` - 17 edges
-4. `compilerOptions` - 16 edges
-5. `requireAuth()` - 16 edges
-6. `Wardrobe Vault — Build Plan` - 15 edges
-7. `withDbRetry()` - 13 edges
-8. `AGENTS.md — Wardrobe Vault` - 12 edges
-9. `updateListingDraft()` - 11 edges
-10. `Container()` - 11 edges
+3. `requireAuth()` - 26 edges
+4. `Button()` - 23 edges
+5. `compilerOptions` - 16 edges
+6. `Container()` - 15 edges
+7. `Wardrobe Vault — Build Plan` - 15 edges
+8. `Section()` - 14 edges
+9. `withDbRetry()` - 13 edges
+10. `formatUgx()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `DialogOverlay()` --calls--> `cn()`  [EXTRACTED]
   components/ui/dialog.tsx → lib/utils.ts
-- `Tabs()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/tabs.tsx → lib/utils.ts
-- `TabsTrigger()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/tabs.tsx → lib/utils.ts
-- `TabsContent()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/tabs.tsx → lib/utils.ts
-- `SelectGroup()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/select.tsx → lib/utils.ts
+- `DropdownMenuContent()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/dropdown-menu.tsx → lib/utils.ts
+- `DropdownMenuLabel()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/dropdown-menu.tsx → lib/utils.ts
+- `DropdownMenuItem()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/dropdown-menu.tsx → lib/utils.ts
+- `DropdownMenuSubTrigger()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/dropdown-menu.tsx → lib/utils.ts
 
-## Communities (51 total, 12 thin omitted)
+## Communities (54 total, 12 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.29
-Nodes (6): ACTION_CONFIGS, ActionConfig, initialState, ListingActionPanel(), Props, Textarea()
+Cohesion: 0.14
+Nodes (16): ADMIN_ROLES, AuthenticatedSession, formatUgx(), UGX_FORMATTER, ORDER_STATUS_LABELS, OrderDetailPage(), PageProps, ORDER_STATUS_LABELS (+8 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -117,8 +120,8 @@ Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.10
-Nodes (23): GalleryImage, ListingGallery(), ListingGalleryProps, initialState, REPORT_REASONS, ReportListingDialogProps, Dialog(), DialogContent() (+15 more)
+Cohesion: 0.16
+Nodes (11): GalleryImage, ListingGallery(), ListingGalleryProps, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader() (+3 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.14
@@ -129,16 +132,16 @@ Cohesion: 0.22
 Nodes (8): Build Order, CLAUDE.md — Wardrobe Vault, code:block1 (app/), Definition of Done for Any Page/Feature, Non-Negotiables (see AGENTS.md for full detail), Repository Conventions, Stack, What This Project Is
 
 ### Community 10 - "Community 10"
-Cohesion: 0.32
-Nodes (7): assertOrderTransition(), assertPaymentTransition(), canTransitionOrder(), canTransitionPayment(), ORDER_STATUS_TRANSITIONS, PAYMENT_STATUS_TRANSITIONS, TERMINAL_ORDER_STATUSES
+Cohesion: 0.06
+Nodes (50): CheckoutActionState, confirmPurchaseAction(), ConfirmPurchaseForm(), ConfirmPurchaseFormProps, assertListingTransition(), calculateOrderTotals(), deepEqual(), MANUAL_ORDER_TOTALS_TEST_CASES (+42 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.14
-Nodes (22): bool(), collectListingFields(), collectSubmitFields(), createListingAction(), getListingId(), ListingActionState, num(), parseJsonField() (+14 more)
+Cohesion: 0.12
+Nodes (9): DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuRadioItem(), DropdownMenuSeparator(), DropdownMenuShortcut(), DropdownMenuSubContent() (+1 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.11
-Nodes (34): validateListingDocumentsForUser(), validateListingImagesForUser(), assertCategoryExists(), assertListingEditable(), assertSellerOwnsListing(), getDefaultCategoryId(), SELLER_EDITABLE_LISTING_STATUSES, createListing() (+26 more)
+Cohesion: 0.08
+Nodes (49): CloudinaryConfigError, configureCloudinary(), documentUploadFolder(), getCloudinaryConfig(), listingUploadFolder(), requireEnv(), assertFolder(), CloudinaryResource (+41 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.33
@@ -157,8 +160,8 @@ Cohesion: 0.40
 Nodes (4): 1. Confirmed Stack, 2. Feature-Level Decisions, 3. Gaps Not Yet Covered — Recommended Defaults, Wardrobe Vault — Tech Spec Addendum
 
 ### Community 17 - "Community 17"
-Cohesion: 0.67
-Nodes (3): assertPayoutTransition(), canTransitionPayout(), PAYOUT_STATUS_TRANSITIONS
+Cohesion: 0.07
+Nodes (33): getAdminListingQueueCounts(), AdminPage(), initialState, PayoutActionOption, PayoutActionPanel(), Props, adminPayoutActionAction(), AdminPayoutActionState (+25 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.67
@@ -170,79 +173,91 @@ Nodes (7): buildClearSql(), buildSeedSql(), CATEGORIES, executeSql(), IDS, main(
 
 ### Community 21 - "Community 21"
 Cohesion: 0.06
-Nodes (53): PageProps, Home(), EmptyState(), EmptyStateProps, VerificationBadge(), VerificationBadgeProps, RETRYABLE_CODES, withDbRetry() (+45 more)
+Nodes (43): Home(), normalizeDatabaseUrl(), RETRYABLE_CODES, withDbRetry(), adapter, getConnectionString(), globalForPrisma, PUBLIC_DETAIL_STATUSES (+35 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.18
-Nodes (17): AuthActionState, initialState, LoginFormProps, initialState, RegisterForm(), Category, initialState, ListingFormDefaultValues (+9 more)
+Cohesion: 0.07
+Nodes (45): AuthActionState, Option, Props, TYPE_LABELS, PageProps, initialState, LoginForm(), LoginFormProps (+37 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.27
-Nodes (7): ErrorState(), ErrorStateProps, ImageUploader(), Props, UploadState, Button(), buttonVariants
+Cohesion: 0.15
+Nodes (16): PageProps, Container(), ContainerProps, widthClasses, PageShell(), PageShellProps, Section(), SectionProps (+8 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.09
-Nodes (28): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), CardAction() (+20 more)
+Cohesion: 0.14
+Nodes (19): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), CardAction() (+11 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.40
 Nodes (5): Tabs(), TabsContent(), TabsList(), tabsListVariants, TabsTrigger()
+
+### Community 41 - "Community 41"
+Cohesion: 0.11
+Nodes (25): bool(), collectListingFields(), collectSubmitFields(), createListingAction(), getListingId(), ListingActionState, num(), parseJsonField() (+17 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.50
 Nodes (3): JWT, Session, User
 
 ### Community 43 - "Community 43"
-Cohesion: 0.12
-Nodes (20): ACTION_LABELS, actionToStatus(), AdminActionInput, AdminListingTab, buildSellerNotification(), getAdminListingQueue(), getAdminListingQueueCounts(), NotificationPayload (+12 more)
+Cohesion: 0.07
+Nodes (36): ACTION_CONFIGS, ActionConfig, initialState, ListingActionPanel(), Props, ACTION_LABELS, actionToStatus(), AdminActionInput (+28 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.10
-Nodes (25): Pagination(), PaginationProps, SearchBar(), SearchBarProps, buildOrderBy(), buildWhere(), Category, conditionLabels (+17 more)
+Cohesion: 0.15
+Nodes (15): EmptyState(), EmptyStateProps, formatPrice(), ItemCard(), ItemCardProps, Pagination(), PaginationProps, PublicListingCard (+7 more)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.17
 Nodes (11): Animation conventions (§36), Anti-AI-design checklist (§45), Brand components, Do, Don't, Layout primitives, Palette (`app/globals.css`), Phase 3 foundation status (+3 more)
 
+### Community 46 - "Community 46"
+Cohesion: 0.13
+Nodes (22): AdminCommissionActionState, AdminCommissionError, createCommissionSetting(), createCommissionSettingAction(), getCommissionFormOptions(), getCommissionSettings(), CommissionSettingCreateForm(), CommissionSettingRow() (+14 more)
+
 ### Community 47 - "Community 47"
-Cohesion: 0.11
-Nodes (31): CloudinaryConfigError, configureCloudinary(), documentUploadFolder(), getCloudinaryConfig(), listingUploadFolder(), requireEnv(), CloudinaryUploadResponse, getSignature() (+23 more)
+Cohesion: 0.17
+Nodes (14): countSellerListingsByTab(), getSellerListings(), sellerListingInclude, SellerListingTab, tabToStatuses(), Props, SellerListing, SellerListingsTable() (+6 more)
 
 ### Community 48 - "Community 48"
-Cohesion: 0.06
-Nodes (32): getRequestIp(), loginAction(), registerAction(), signOutAction(), AdminLayout(), adminActionSchema, AdminListingAction, adminListingActionAction() (+24 more)
+Cohesion: 0.10
+Nodes (19): getRequestIp(), loginAction(), registerAction(), signOutAction(), AdminLayout(), authorized(), { handlers, auth, signIn, signOut }, isAdminRole() (+11 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.07
-Nodes (32): getAdminListingDetail(), formatDate(), PageProps, formatDate(), PageProps, getSession(), formatUgx(), UGX_FORMATTER (+24 more)
+Cohesion: 0.19
+Nodes (11): formatDate(), PageProps, getSession(), VerificationBadge(), VerificationBadgeProps, generateMetadata(), ListingDetailPage(), getPublicListingDetail() (+3 more)
+
+### Community 50 - "Community 50"
+Cohesion: 0.15
+Nodes (14): initialState, REPORT_REASONS, ReportListingDialog(), ReportListingDialogProps, SelectContent(), SelectGroup(), SelectItem(), SelectLabel() (+6 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.29
-Nodes (7): scripts, build, db:migrate, db:seed, dev, lint, start
+Cohesion: 0.25
+Nodes (8): scripts, build, db:migrate, db:seed, dev, lint, start, test:order-totals
 
 ### Community 53 - "Community 53"
 Cohesion: 0.50
 Nodes (3): name, private, version
 
 ## Knowledge Gaps
-- **316 isolated node(s):** `config`, `$schema`, `style`, `rsc`, `tsx` (+311 more)
+- **353 isolated node(s):** `config`, `$schema`, `style`, `rsc`, `tsx` (+348 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 39` to `Community 0`, `Community 37`, `Community 38`, `Community 7`, `Community 40`, `Community 44`, `Community 49`, `Community 21`?**
-  _High betweenness centrality (0.117) - this node is a cross-community bridge._
-- **Why does `Button()` connect `Community 38` to `Community 0`, `Community 37`, `Community 7`, `Community 39`, `Community 47`, `Community 49`, `Community 21`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `Badge()` connect `Community 49` to `Community 43`, `Community 39`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 39` to `Community 0`, `Community 37`, `Community 38`, `Community 7`, `Community 40`, `Community 11`, `Community 44`, `Community 49`, `Community 50`, `Community 51`, `Community 21`?**
+  _High betweenness centrality (0.109) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 37` to `Community 0`, `Community 38`, `Community 7`, `Community 39`, `Community 10`, `Community 43`, `Community 46`, `Community 47`, `Community 17`, `Community 50`, `Community 51`, `Community 49`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `requireAuth()` connect `Community 41` to `Community 0`, `Community 37`, `Community 38`, `Community 10`, `Community 46`, `Community 47`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `config`, `$schema`, `style` to the rest of the system?**
-  _316 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _353 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.14492753623188406 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._

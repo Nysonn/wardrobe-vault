@@ -26,6 +26,18 @@ export default async function DashboardLayout({
               My Listings
             </Link>
             <Link
+              href="/orders"
+              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+            >
+              Orders
+            </Link>
+            <Link
+              href="/wallet"
+              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+            >
+              Earnings
+            </Link>
+            <Link
               href="/sell/new"
               className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >

@@ -24,6 +24,15 @@ export default async function AdminLayout({
             <Link href="/admin/listings" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Listings
             </Link>
+            <Link href="/admin/payouts" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+              Payouts
+            </Link>
+            <Link
+              href="/admin/settings/commission"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100"
+            >
+              Commission
+            </Link>
             <span>{session.user.email}</span>
             <span className="rounded-full border px-2 py-0.5 text-xs uppercase tracking-wide">
               {session.user.role}
