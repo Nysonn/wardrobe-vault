@@ -9,7 +9,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-vault-ivory: var(--vault-ivory);
+  --color-vault-cream: var(--vault-cream);
+  --color-vault-charcoal: var(--vault-charcoal);
+  --color-vault-espresso: var(--vault-espresso);
+  --color-vault-taupe: var(--vault-taupe);
+  --color-vault-stone: var(--vault-stone);
+  --color-vault-accent: var(--vault-accent);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -39,92 +46,172 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-sm: calc(var(--radius) * 0.75);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.25);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3);
+  --animate-fade-in: fade-in 0.45s ease-out both;
+  --animate-fade-in-slow: fade-in 0.65s ease-out both;
 }
 
+/* Wardrobe Vault — quiet-luxury palette (initial-prompt §5) */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --vault-ivory: oklch(0.985 0.008 90);
+  --vault-cream: oklch(0.965 0.012 88);
+  --vault-charcoal: oklch(0.28 0.015 50);
+  --vault-espresso: oklch(0.3 0.028 45);
+  --vault-taupe: oklch(0.56 0.018 55);
+  --vault-stone: oklch(0.87 0.012 82);
+  --vault-accent: oklch(0.48 0.05 58);
+
+  --background: var(--vault-ivory);
+  --foreground: var(--vault-charcoal);
+  --card: oklch(0.995 0.006 92);
+  --card-foreground: var(--vault-charcoal);
+  --popover: var(--vault-ivory);
+  --popover-foreground: var(--vault-charcoal);
+  --primary: var(--vault-espresso);
+  --primary-foreground: var(--vault-ivory);
+  --secondary: var(--vault-cream);
+  --secondary-foreground: var(--vault-charcoal);
+  --muted: var(--vault-cream);
+  --muted-foreground: var(--vault-taupe);
+  --accent: oklch(0.94 0.014 86);
+  --accent-foreground: var(--vault-espresso);
+  --destructive: oklch(0.52 0.14 25);
+  --border: var(--vault-stone);
+  --input: var(--vault-stone);
+  --ring: oklch(0.48 0.05 58 / 35%);
+  --chart-1: var(--vault-espresso);
+  --chart-2: var(--vault-taupe);
+  --chart-3: var(--vault-accent);
+  --chart-4: var(--vault-stone);
+  --chart-5: var(--vault-cream);
+  --radius: 0.25rem;
+  --sidebar: var(--vault-cream);
+  --sidebar-foreground: var(--vault-charcoal);
+  --sidebar-primary: var(--vault-espresso);
+  --sidebar-primary-foreground: var(--vault-ivory);
+  --sidebar-accent: var(--vault-ivory);
+  --sidebar-accent-foreground: var(--vault-charcoal);
+  --sidebar-border: var(--vault-stone);
+  --sidebar-ring: oklch(0.48 0.05 58 / 35%);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --vault-ivory: oklch(0.94 0.008 90);
+  --vault-cream: oklch(0.24 0.012 50);
+  --vault-charcoal: oklch(0.94 0.008 90);
+  --vault-espresso: oklch(0.88 0.012 88);
+  --vault-taupe: oklch(0.68 0.015 60);
+  --vault-stone: oklch(0.34 0.012 52);
+  --vault-accent: oklch(0.62 0.05 62);
+
+  --background: oklch(0.19 0.014 50);
+  --foreground: var(--vault-charcoal);
+  --card: oklch(0.22 0.014 50);
+  --card-foreground: var(--vault-charcoal);
+  --popover: oklch(0.22 0.014 50);
+  --popover-foreground: var(--vault-charcoal);
+  --primary: var(--vault-espresso);
+  --primary-foreground: oklch(0.19 0.014 50);
+  --secondary: var(--vault-cream);
+  --secondary-foreground: var(--vault-charcoal);
+  --muted: var(--vault-cream);
+  --muted-foreground: var(--vault-taupe);
+  --accent: oklch(0.26 0.012 52);
+  --accent-foreground: var(--vault-charcoal);
+  --destructive: oklch(0.65 0.14 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.62 0.05 62 / 40%);
+  --sidebar: oklch(0.22 0.014 50);
+  --sidebar-foreground: var(--vault-charcoal);
+  --sidebar-primary: var(--vault-espresso);
+  --sidebar-primary-foreground: oklch(0.19 0.014 50);
+  --sidebar-accent: oklch(0.26 0.012 52);
+  --sidebar-accent-foreground: var(--vault-charcoal);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.62 0.05 62 / 40%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
     @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading font-normal tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl leading-[1.1] sm:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl leading-tight sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl leading-snug;
+  }
+}
+
+@utility transition-vault {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+@utility hover-lift {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading), ui-serif, Georgia, serif;
+  }
+
+  .text-editorial {
+    @apply font-heading text-balance leading-[1.15] tracking-tight;
+  }
+
+  .text-ui {
+    @apply font-sans text-sm leading-relaxed;
+  }
+
+  .surface-quiet {
+    @apply border border-border bg-card shadow-none;
   }
 }

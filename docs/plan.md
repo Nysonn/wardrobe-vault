@@ -114,76 +114,76 @@ for this project.
 
 ## Phase 3 — Design System Foundation
 
-- [ ] Tailwind config: neutral luxury palette (ivory, cream, off-white, charcoal, espresso, taupe,
+- [x] Tailwind config: neutral luxury palette (ivory, cream, off-white, charcoal, espresso, taupe,
       stone) + one restrained accent color (§5)
-- [ ] Typography setup: editorial serif for headings, clean sans-serif for UI (§6)
-- [ ] Base shadcn/ui overrides — remove default shadcn look, no generic AI-dashboard patterns (§45)
-- [ ] Layout primitives: generous whitespace, restrained borders, no excessive rounded corners/shadows
-- [ ] Reusable components: elegant empty-state component (brand voice, §38), error-state component
+- [x] Typography setup: editorial serif for headings, clean sans-serif for UI (§6)
+- [x] Base shadcn/ui overrides — remove default shadcn look, no generic AI-dashboard patterns (§45)
+- [x] Layout primitives: generous whitespace, restrained borders, no excessive rounded corners/shadows
+- [x] Reusable components: elegant empty-state component (brand voice, §38), error-state component
       (human copy, §39), verification badge (subtle, not social-media style, §13)
-- [ ] Animation conventions: subtle fade-ins/hover/transitions only (§36) — document do/don't list
-- [ ] Run design against §45 anti-AI-design checklist before proceeding to real pages
+- [x] Animation conventions: subtle fade-ins/hover/transitions only (§36) — document do/don't list
+- [x] Run design against §45 anti-AI-design checklist before proceeding to real pages
 
 ---
 
 ## Phase 4 — Listing Creation → Draft → Submit Flow
 
-- [ ] Zod schemas in `lib/schemas/listing.ts` (shared client/server, single definition — AGENTS.md §8)
-- [ ] `lib/services/listings/` business logic (create, update, submit, transition status)
-- [ ] Listing creation form: basic info, story, authenticity, images (multi-upload)
-- [ ] Cloudinary upload integration: cap 10 images, 10MB/file, JPEG/PNG/WebP, min ~1200px long edge —
+- [x] Zod schemas in `lib/schemas/listing.ts` (shared client/server, single definition — AGENTS.md §8)
+- [x] `lib/services/listings/` business logic (create, update, submit, transition status)
+- [x] Listing creation form: basic info, story, authenticity, images (multi-upload)
+- [x] Cloudinary upload integration: cap 10 images, 10MB/file, JPEG/PNG/WebP, min ~1200px long edge —
       validated client-side **and** re-validated server-side (tech-spec §Gaps.1)
-- [ ] Save-as-draft (partial completion allowed, not publicly visible — §15)
-- [ ] Submit-for-review action (transitions Draft → Submitted per state machine)
-- [ ] "My Listings" view: Published / Drafts / Under Review / Sold / Rejected (§24)
-- [ ] Server-side re-validation of all fields on submit (never trust client validation alone)
+- [x] Save-as-draft (partial completion allowed, not publicly visible — §15)
+- [x] Submit-for-review action (transitions Draft → Submitted per state machine)
+- [x] "My Listings" view: Published / Drafts / Under Review / Sold / Rejected (§24)
+- [x] Server-side re-validation of all fields on submit (never trust client validation alone)
 
 ---
 
 ## Phase 5 — Admin Listing Review
 
-- [ ] Admin listing queue: pending / submitted / under review
-- [ ] Listing detail review view: seller, images, price, description, claimed wearer, event,
+- [x] Admin listing queue: pending / submitted / under review
+- [x] Listing detail review view: seller, images, price, description, claimed wearer, event,
       verification docs, authenticity evidence, submission date, prior moderation history (§17)
-- [ ] Admin actions: Approve · Reject (with reason) · Request Changes · Suspend · Archive
-- [ ] Internal admin notes on listings
-- [ ] Every action writes `AdminAction` audit log entry (admin, action, target, timestamp, details)
-- [ ] Rejected listings: user notified with reason, can edit and resubmit
-- [ ] Enforce listing state machine transitions from Phase 1.1 — reject invalid transitions
+- [x] Admin actions: Approve · Reject (with reason) · Request Changes · Suspend · Archive
+- [x] Internal admin notes on listings
+- [x] Every action writes `AdminAction` audit log entry (admin, action, target, timestamp, details)
+- [x] Rejected listings: user notified with reason, can edit and resubmit
+- [x] Enforce listing state machine transitions from Phase 1.1 — reject invalid transitions
 
 ---
 
 ## Phase 6 — Public Browse / Search / Item Detail Pages
 
 ### 6.1 Homepage & Discovery
-- [ ] Editorial homepage: hero (WARDROBE VAULT / tagline), primary CTA "Explore the Vault",
+- [x] Editorial homepage: hero (WARDROBE VAULT / tagline), primary CTA "Explore the Vault",
       secondary CTA "Sell a Piece" (§8)
-- [ ] Featured Vault sections (Recently Added, Most Coveted, Worn by Icons, etc.) — curated, not
+- [x] Featured Vault sections (Recently Added, Most Coveted, Worn by Icons, etc.) — curated, not
       a dense grid (§9)
-- [ ] Product/item cards: image, item name, brand, price, seller, verification badge, "Worn By",
+- [x] Product/item cards: image, item name, brand, price, seller, verification badge, "Worn By",
       event info — not generic e-commerce cards (§10)
 
 ### 6.2 Search & Filtering
-- [ ] `searchListings()` service using Postgres `ILIKE`/filters, architected to be swappable for a
+- [x] `searchListings()` service using Postgres `ILIKE`/filters, architected to be swappable for a
       dedicated search index later without touching call sites (tech-spec §2)
-- [ ] Search by item/brand/designer/public figure/category/event/size/price/condition/location (§25)
-- [ ] Filters: price, category, designer, size, condition, verified public figure, recently added,
+- [x] Search by item/brand/designer/public figure/category/event/size/price/condition/location (§25)
+- [x] Filters: price, category, designer, size, condition, verified public figure, recently added,
       most coveted, available, sold
-- [ ] Page-number-based pagination (not infinite scroll) (tech-spec §2)
+- [x] Page-number-based pagination (not infinite scroll) (tech-spec §2)
 
 ### 6.3 Item Detail Page
-- [ ] Large image gallery (zoom, full-screen, thumbnails) (§37)
-- [ ] Full detail fields: designer, condition, size, material, color, year, purchase info, event,
+- [x] Large image gallery (zoom, full-screen, thumbnails) (§37)
+- [x] Full detail fields: designer, condition, size, material, color, year, purchase info, event,
       date worn, times worn, seller info, price (§11)
-- [ ] Authenticity section: clearly distinguish seller-claimed vs. Wardrobe-Vault-verified (§32)
-- [ ] "Story" section with "Verified Story" indicator when evidence exists, otherwise clearly
+- [x] Authenticity section: clearly distinguish seller-claimed vs. Wardrobe-Vault-verified (§32)
+- [x] "Story" section with "Verified Story" indicator when evidence exists, otherwise clearly
       marked unverified — never falsely claim celebrity ownership (§11)
-- [ ] "Worn By" block linking to public figure profile when applicable (§12)
-- [ ] Report-listing action (counterfeit / false claim / misleading / inappropriate / fraud / other) (§33)
+- [x] "Worn By" block linking to public figure profile when applicable (§12)
+- [x] Report-listing action (counterfeit / false claim / misleading / inappropriate / fraud / other) (§33)
 
 ### 6.4 Profiles
-- [ ] User profile pages (photo, name, verified status, bio, region, listed/sold items) (§28)
-- [ ] Verified public figure profile (stronger editorial treatment) linked from "Worn By" (§12, §13)
+- [x] User profile pages (photo, name, verified status, bio, region, listed/sold items) (§28)
+- [x] Verified public figure profile (stronger editorial treatment) linked from "Worn By" (§12, §13)
 
 ---
 

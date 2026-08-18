@@ -1,4 +1,4 @@
-import { ListingStatus } from "@/lib/generated/prisma/client";
+import { ListingStatus } from "@/lib/generated/prisma/enums";
 
 /**
  * Allowed listing status transitions (Phase 1.1).

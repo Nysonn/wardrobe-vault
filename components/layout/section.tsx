@@ -1,0 +1,24 @@
+import { cn } from "@/lib/utils";
+
+type SectionProps = React.ComponentProps<"section"> & {
+  spacing?: "default" | "compact" | "generous";
+};
+
+const spacingClasses = {
+  compact: "py-10 sm:py-12",
+  default: "py-14 sm:py-16",
+  generous: "py-20 sm:py-24",
+} as const;
+
+export function Section({
+  className,
+  spacing = "default",
+  ...props
+}: SectionProps) {
+  return (
+    <section
+      className={cn(spacingClasses[spacing], className)}
+      {...props}
+    />
+  );
+}

@@ -21,6 +21,9 @@ export default async function AdminLayout({
             </h1>
           </div>
           <div className="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
+            <Link href="/admin/listings" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+              Listings
+            </Link>
             <span>{session.user.email}</span>
             <span className="rounded-full border px-2 py-0.5 text-xs uppercase tracking-wide">
               {session.user.role}
