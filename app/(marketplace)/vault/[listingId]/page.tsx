@@ -6,7 +6,9 @@ import { VerificationBadge } from "@/components/brand/verification-badge";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { ListingGallery } from "@/components/listings/listing-gallery";
+import { ListingPurchaseBar } from "@/components/listings/listing-purchase-bar";
 import { ReportListingDialog } from "@/components/listings/report-listing-dialog";
+import { WishlistButton } from "@/components/listings/wishlist-button";
 import { WornByBlock } from "@/components/listings/worn-by-block";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,6 +20,7 @@ import {
   LISTING_DOCUMENT_TYPE_LABELS,
 } from "@/lib/schemas/listing";
 import { getPublicListingDetail } from "@/lib/services/listings/detail";
+import { isListingFavorited } from "@/lib/services/wishlist";
 
 export const dynamic = "force-dynamic";
 
@@ -115,6 +118,10 @@ export default async function ListingDetailPage({ params }: PageProps) {
   const isSold = listing.status === ListingStatus.SOLD;
   const isPublished = listing.status === ListingStatus.PUBLISHED;
   const isOwnListing = session?.user?.id === listing.seller.id;
+  const isFavorited =
+    session?.user?.id && !isOwnListing && isPublished
+      ? await isListingFavorited(session.user.id, listingId)
+      : false;
   const checkoutHref = `/checkout/${listing.id}`;
   const loginHref = `/login?callbackUrl=${encodeURIComponent(checkoutHref)}`;
   const purchaseDocuments = listing.documents.filter(
@@ -149,7 +156,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
         </Container>
       </div>
 
-      <Section spacing="default" className="pt-10">
+      <Section spacing="default" className="pb-24 pt-10 lg:pb-10">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
             {/* Gallery */}
@@ -201,11 +208,17 @@ export default async function ListingDetailPage({ params }: PageProps) {
                 </p>
 
                 {isPublished && !isOwnListing && (
-                  <div className="mt-6">
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
                     {session?.user?.id ? (
-                      <Button size="lg" render={<Link href={checkoutHref} />}>
-                        Purchase
-                      </Button>
+                      <>
+                        <Button size="lg" render={<Link href={checkoutHref} />}>
+                          Purchase
+                        </Button>
+                        <WishlistButton
+                          listingId={listing.id}
+                          initialFavorited={isFavorited}
+                        />
+                      </>
                     ) : (
                       <Button size="lg" render={<Link href={loginHref} />}>
                         Sign in to purchase
@@ -430,6 +443,17 @@ export default async function ListingDetailPage({ params }: PageProps) {
           </div>
         </Container>
       </Section>
+
+      {isPublished && !isOwnListing && (
+        <ListingPurchaseBar
+          listingId={listing.id}
+          price={listing.price}
+          checkoutHref={checkoutHref}
+          loginHref={loginHref}
+          isAuthenticated={!!session?.user?.id}
+          initialFavorited={isFavorited}
+        />
+      )}
     </>
   );
 }

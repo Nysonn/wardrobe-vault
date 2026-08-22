@@ -26,7 +26,8 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   LISTING_CONDITION_LABELS,
   type ListingDocumentInput,
-  type ListingImageInput,
+  type ListingImageDraftInput,
+  type ShippingDetailInput,
 } from "@/lib/schemas/listing";
 
 type Category = { id: string; name: string };
@@ -48,8 +49,9 @@ type ListingFormDefaultValues = {
   timesWorn?: number;
   storyDetails?: string;
   authenticityNotes?: string;
-  images?: ListingImageInput[];
+  images?: ListingImageDraftInput[];
   documents?: ListingDocumentInput[];
+  shipping?: ShippingDetailInput;
 };
 
 type ListingFormProps = {
@@ -76,11 +78,18 @@ export function ListingForm({
     initialState,
   );
 
-  const [images, setImages] = useState<ListingImageInput[]>(
+  const [images, setImages] = useState<ListingImageDraftInput[]>(
     defaultValues.images ?? [],
   );
   const [documents, setDocuments] = useState<ListingDocumentInput[]>(
     defaultValues.documents ?? [],
+  );
+  const [shipping] = useState<ShippingDetailInput>(
+    defaultValues.shipping ?? {
+      isAvailable: true,
+      regions: [],
+      fee: 0,
+    },
   );
 
   const errorMessage = saveState.error ?? submitState.error;
@@ -108,6 +117,7 @@ export function ListingForm({
           name="documents"
           value={JSON.stringify(documents)}
         />
+        <input type="hidden" name="shipping" value={JSON.stringify(shipping)} />
 
         <CardContent className="space-y-6">
           {errorMessage ? (

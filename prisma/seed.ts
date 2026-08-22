@@ -112,6 +112,7 @@ function buildClearSql(): string {
 BEGIN;
 DELETE FROM "AdminAction";
 DELETE FROM "Report";
+DELETE FROM "PlatformSetting";
 DELETE FROM "Message";
 DELETE FROM "Notification";
 DELETE FROM "WalletTransaction";
@@ -276,6 +277,14 @@ INSERT INTO "AdminAction" ("id","adminId","action","targetType","targetId","deta
   ('seed_audit_1', ${q(IDS.admin)}, 'VERIFICATION_APPROVED', 'User', ${q(IDS.icon)}, '{"email":"icon@demo.local"}', NOW()),
   ('seed_audit_2', ${q(IDS.admin)}, 'LISTING_APPROVED', 'Listing', ${q(IDS.listingApproved)}, NULL, NOW()),
   ('seed_audit_3', ${q(IDS.admin)}, 'PAYOUT_PAID', 'Order', 'WV-2026-0001', NULL, NOW());
+
+INSERT INTO "PlatformSetting" ("key","value","updatedAt") VALUES
+  ('marketplace.currency', 'UGX', NOW()),
+  ('marketplace.verification_policy', 'Public figure verification requires manual admin review. Applicants must submit verifiable evidence such as press coverage, event photographs, management letters, or ownership documentation. Verification is never granted automatically.', NOW()),
+  ('marketplace.shipping_guidance', 'Sellers configure shipping per listing. Platform default guidance: confirm regions served, disclose fees in UGX, and provide realistic delivery estimates. International shipping is out of scope for MVP.', NOW());
+
+INSERT INTO "Report" ("id","reporterId","listingId","reason","details","status","createdAt","updatedAt") VALUES
+  ('seed_report_open', ${q(IDS.buyer)}, ${q(IDS.listingPublished)}, 'MISLEADING_DESCRIPTION', 'The event attribution on this listing may not match published photographs from the referenced appearance.', 'OPEN', NOW(), NOW());
 
 COMMIT;
 `;

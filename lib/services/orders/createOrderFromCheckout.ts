@@ -1,6 +1,7 @@
 import { getPaymentProvider } from "@/lib/payments";
 import {
   ListingStatus,
+  NotificationType,
   OrderStatus,
   PaymentStatus,
   PayoutStatus,
@@ -14,6 +15,7 @@ import { OrderServiceError } from "./errors";
 import { generateOrderNumber } from "./generateOrderNumber";
 import { assertListingPurchasable } from "./getCheckoutPreview";
 import { resolveCommissionRate } from "./resolveCommissionRate";
+import { createNotifications } from "@/lib/services/notifications";
 import { recordSaleWalletEntries } from "@/lib/services/payouts/recordSaleWalletEntries";
 
 export type CreateOrderResult = {
@@ -275,6 +277,26 @@ async function finalizeSuccessfulPayment(
       grossAmount: input.totals.itemPrice,
       commissionAmount: input.totals.commissionAmount,
     });
+
+    await createNotifications(
+      [
+        {
+          userId: input.buyerId,
+          type: NotificationType.PURCHASE_CONFIRMED,
+          title: "Purchase confirmed",
+          body: `${itemTitle}. We will notify you when it ships.`,
+          link: `/orders/${input.orderId}`,
+        },
+        {
+          userId: input.sellerId,
+          type: NotificationType.ITEM_SOLD,
+          title: "Your piece sold",
+          body: `${itemTitle} (${input.orderNumber}). Prepare shipment when ready.`,
+          link: `/orders/${input.orderId}`,
+        },
+      ],
+      tx,
+    );
   });
 
   return {

@@ -41,8 +41,8 @@ export default async function OrdersPage() {
         {orders.length === 0 ? (
           <EmptyState
             className="mt-12"
-            title="No orders yet"
-            description="When you acquire a piece from the Vault, it will appear here with full payment and fulfilment details."
+            title="No orders yet."
+            description="When you acquire a piece from the Vault, it will appear here with payment and fulfilment details."
             action={
               <Link
                 href="/vault"

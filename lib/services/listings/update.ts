@@ -13,7 +13,7 @@ import {
   assertListingEditable,
   assertSellerOwnsListing,
 } from "./access";
-import { ListingServiceError } from "./errors";
+import { ListingServiceError, formatListingValidationError } from "./errors";
 import {
   toDocumentCreateMany,
   toImageCreateMany,
@@ -34,9 +34,7 @@ export async function updateListingDraft({
 }: UpdateListingDraftInput) {
   const parsed = listingDraftInputSchema.safeParse(data);
   if (!parsed.success) {
-    throw new ListingServiceError(
-      parsed.error.issues[0]?.message ?? "Please check your listing details.",
-    );
+    throw new ListingServiceError(formatListingValidationError(parsed.error));
   }
 
   const input = parsed.data;

@@ -4,6 +4,10 @@ import { revalidatePath } from "next/cache";
 
 import { requireAdmin } from "@/lib/auth/guards";
 import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
+import {
   commissionSettingCreateSchema,
   commissionSettingUpdateSchema,
   percentToBps,
@@ -38,7 +42,7 @@ export async function createCommissionSettingAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Invalid commission setting.",
+      error: validationMessage(parsed.error, "Please check the commission setting."),
     };
   }
 
@@ -57,10 +61,10 @@ export async function createCommissionSettingAction(
       validUntil: data.validUntil ? new Date(data.validUntil) : undefined,
     });
   } catch (error) {
-    if (error instanceof AdminCommissionError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "admin.commission.create",
+      serviceErrors: [AdminCommissionError],
+    });
   }
 
   revalidatePath("/admin/settings/commission");
@@ -84,7 +88,7 @@ export async function updateCommissionSettingAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Invalid commission update.",
+      error: validationMessage(parsed.error, "Please check the commission update."),
     };
   }
 
@@ -101,10 +105,10 @@ export async function updateCommissionSettingAction(
       isActive: data.isActive,
     });
   } catch (error) {
-    if (error instanceof AdminCommissionError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "admin.commission.update",
+      serviceErrors: [AdminCommissionError],
+    });
   }
 
   revalidatePath("/admin/settings/commission");

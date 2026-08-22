@@ -15,6 +15,27 @@ export function isAdminRole(role: Role): boolean {
   return ADMIN_ROLES.includes(role);
 }
 
+/** Default landing page after login — admins to /admin unless a deep link was requested. */
+export function resolvePostLoginRedirect(
+  callbackUrl: unknown,
+  role: Role | undefined,
+): string {
+  if (
+    typeof callbackUrl === "string" &&
+    callbackUrl.startsWith("/") &&
+    !callbackUrl.startsWith("//") &&
+    callbackUrl !== "/"
+  ) {
+    return callbackUrl;
+  }
+
+  if (role && isAdminRole(role)) {
+    return "/admin";
+  }
+
+  return "/";
+}
+
 export type AuthenticatedSession = Session & {
   user: {
     id: string;
@@ -26,7 +47,11 @@ export type AuthenticatedSession = Session & {
 };
 
 export async function getSession() {
-  return auth();
+  try {
+    return await auth();
+  } catch {
+    return null;
+  }
 }
 
 export async function requireAuth(): Promise<AuthenticatedSession> {

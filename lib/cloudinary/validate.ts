@@ -8,6 +8,11 @@ import {
   type ListingImageInput,
 } from "@/lib/schemas/listing";
 
+type ListingImageUploadInput = Omit<ListingImageInput, "width" | "height"> & {
+  width?: number;
+  height?: number;
+};
+
 import {
   CloudinaryConfigError,
   configureCloudinary,
@@ -60,7 +65,7 @@ async function fetchResource(
 
 export async function validateListingImageUpload(
   userId: string,
-  image: ListingImageInput,
+  image: ListingImageUploadInput,
 ): Promise<ListingImageInput> {
   const folder = listingUploadFolder(userId);
   assertFolder(image.cloudinaryPublicId, folder);
@@ -82,6 +87,11 @@ export async function validateListingImageUpload(
 
   const width = resource.width ?? image.width;
   const height = resource.height ?? image.height;
+
+  if (!width || !height) {
+    throw new Error("Could not determine photograph dimensions.");
+  }
+
   const longEdge = Math.max(width, height);
 
   if (longEdge < LISTING_IMAGE_MIN_LONG_EDGE_PX) {
@@ -137,7 +147,7 @@ export async function validateListingDocumentUpload(
 
 export async function validateListingImagesForUser(
   userId: string,
-  images: ListingImageInput[],
+  images: ListingImageUploadInput[],
 ) {
   return Promise.all(
     images.map((image) => validateListingImageUpload(userId, image)),

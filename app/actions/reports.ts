@@ -1,6 +1,10 @@
 "use server";
 
 import { requireAuth } from "@/lib/auth/guards";
+import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
 import { ReportReason } from "@/lib/generated/prisma/enums";
 import { reportListingInputSchema } from "@/lib/schemas/report";
 import {
@@ -34,8 +38,7 @@ export async function reportListingAction(
 
   if (!parsed.success) {
     return {
-      error:
-        parsed.error.issues[0]?.message ?? "Please check your report details.",
+      error: validationMessage(parsed.error, "Please check your report details."),
     };
   }
 
@@ -50,9 +53,10 @@ export async function reportListingAction(
     });
     return { success: true };
   } catch (error) {
-    if (error instanceof ReportServiceError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "reports.create",
+      serviceErrors: [ReportServiceError],
+      fallback: "Something went wrong while submitting your report. Please try again.",
+    });
   }
 }

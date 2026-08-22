@@ -5,6 +5,7 @@ import {
   WalletTransactionType,
 } from "@/lib/generated/prisma/enums";
 import { prisma } from "@/lib/prisma";
+import { createNotification } from "@/lib/services/notifications";
 
 import { PayoutServiceError } from "./errors";
 import { assertPayoutTransition } from "./stateMachine";
@@ -112,15 +113,16 @@ async function completePayout(
     data: { payoutStatus: PayoutStatus.PAID },
   });
 
-  await tx.notification.create({
-    data: {
+  await createNotification(
+    {
       userId: payout.sellerId,
       type: NotificationType.PAYOUT_COMPLETED,
       title: "Payout completed",
       body: `Your earnings for order ${payout.order.orderNumber} have been paid out.`,
       link: "/wallet",
     },
-  });
+    tx,
+  );
 }
 
 /**
@@ -202,15 +204,16 @@ export async function transitionPayoutStatus({
     });
 
     if (action === "approve") {
-      await tx.notification.create({
-        data: {
+      await createNotification(
+        {
           userId: payout.sellerId,
           type: NotificationType.PAYOUT_APPROVED,
           title: "Payout approved",
           body: `Your earnings for order ${payout.order.orderNumber} have been approved and will be processed shortly.`,
           link: "/wallet",
         },
-      });
+        tx,
+      );
     }
   });
 

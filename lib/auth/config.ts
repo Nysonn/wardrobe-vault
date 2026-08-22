@@ -5,6 +5,7 @@ import type { NextAuthConfig } from "next-auth";
 import bcrypt from "bcryptjs";
 
 import { isAdminRole } from "@/lib/auth/guards";
+import { getAuthSecret } from "@/lib/auth/secret";
 import { prisma } from "@/lib/prisma";
 import { loginSchema } from "@/lib/schemas/auth";
 
@@ -16,6 +17,7 @@ import { loginSchema } from "@/lib/schemas/auth";
 export const authConfig = {
   adapter: PrismaAdapter(prisma),
   trustHost: true,
+  secret: getAuthSecret(),
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60,

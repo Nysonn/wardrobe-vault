@@ -5,6 +5,10 @@ import { z } from "zod";
 
 import { requireAdmin } from "@/lib/auth/guards";
 import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
+import {
   AdminListingError,
   performAdminListingAction,
   type AdminListingAction,
@@ -18,6 +22,7 @@ export type AdminListingActionState = {
 const adminActionSchema = z.object({
   listingId: z.string().trim().min(1),
   action: z.enum([
+    "start-review",
     "approve",
     "reject",
     "request-changes",
@@ -44,7 +49,7 @@ export async function adminListingActionAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Invalid request.",
+      error: validationMessage(parsed.error, "Please check the action details."),
     };
   }
 
@@ -57,10 +62,10 @@ export async function adminListingActionAction(
       notes: parsed.data.notes,
     });
   } catch (error) {
-    if (error instanceof AdminListingError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "admin.listings.action",
+      serviceErrors: [AdminListingError],
+    });
   }
 
   revalidatePath("/admin/listings");

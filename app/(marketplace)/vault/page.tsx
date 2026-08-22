@@ -7,7 +7,7 @@ import { Section } from "@/components/layout/section";
 import { ItemCard } from "@/components/listings/item-card";
 import { Pagination } from "@/components/listings/pagination";
 import { SearchBar } from "@/components/listings/search-bar";
-import { SearchFilters } from "@/components/listings/search-filters";
+import { VaultFiltersPanel } from "@/components/listings/vault-filters-panel";
 import { getActiveCategories } from "@/lib/services/listings/queries";
 import { searchListings } from "@/lib/services/listings/search";
 import { parseSearchParams } from "@/lib/schemas/search";
@@ -94,21 +94,21 @@ export default async function VaultPage({ searchParams }: Props) {
         <Container>
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
             {/* Sidebar filters */}
-            <div className="w-full shrink-0 lg:w-52 xl:w-60">
-              <Suspense>
-                <SearchFilters categories={categories} />
-              </Suspense>
-            </div>
+            <Suspense>
+              <VaultFiltersPanel categories={categories} />
+            </Suspense>
 
             {/* Listing grid */}
             <div className="flex-1 min-w-0">
               {listings.length === 0 ? (
                 <EmptyState
-                  title="Nothing here yet."
+                  title={
+                    hasQuery ? "Nothing matches your search." : "The Vault is quiet here."
+                  }
                   description={
                     hasQuery
-                      ? "No pieces match your search. Try adjusting your filters."
-                      : "The Vault has no published pieces yet."
+                      ? "No pieces match your filters. Try adjusting your search."
+                      : "Published pieces will appear here once the first listings are approved."
                   }
                 />
               ) : (
@@ -121,7 +121,7 @@ export default async function VaultPage({ searchParams }: Props) {
 
                   {/* Pagination */}
                   {totalPages > 1 && (
-                    <div className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-8">
+                    <div className="mt-12 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
                       <p className="text-xs text-muted-foreground">
                         Page {page} of {totalPages}
                         {" · "}

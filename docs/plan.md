@@ -225,50 +225,50 @@ for this project.
 
 ## Phase 9 — Wishlist, Notifications, Messaging
 
-- [ ] Wishlist: add/remove/view saved pieces (§27)
-- [ ] Notifications table + bell icon UI, in-app only (no email for MVP) (tech-spec §2)
-- [ ] Notification triggers: listing approved/rejected/needs changes, item sold, purchase confirmed,
+- [x] Wishlist: add/remove/view saved pieces (§27)
+- [x] Notifications table + bell icon UI, in-app only (no email for MVP) (tech-spec §2)
+- [x] Notification triggers: listing approved/rejected/needs changes, item sold, purchase confirmed,
       order shipped/delivered, payout approved/completed, verification approved/rejected (§34)
-- [ ] DB-backed threaded messages, page refresh/polling only, no websockets (tech-spec §2)
-- [ ] Basic rate limiting on messaging endpoints (tech-spec §Gaps.4)
+- [x] Threaded messages via Stream Chat (real-time) with DB persistence for notifications and audit
+- [x] Basic rate limiting on messaging endpoints (tech-spec §Gaps.4)
 
 ---
 
 ## Phase 10 — Public Figure Verification Workflow
 
-- [ ] Verification application flow: user submits evidence (tech-spec/§13)
-- [ ] Admin verification queue: applications + evidence review
-- [ ] Admin actions: approve / reject / revoke verification — status never auto-granted
+- [x] Verification application flow: user submits evidence (tech-spec/§13)
+- [x] Admin verification queue: applications + evidence review
+- [x] Admin actions: approve / reject / revoke verification — status never auto-granted
       (AGENTS.md §3, §13)
-- [ ] Every verification decision writes `AdminAction` audit log entry
-- [ ] Verified badge rendering: subtle, premium, not a large social-media-style badge (§13)
+- [x] Every verification decision writes `AdminAction` audit log entry
+- [x] Verified badge rendering: subtle, premium, not a large social-media-style badge (§13)
 
 ---
 
 ## Phase 11 — Admin Dashboard Completion
 
-- [ ] Overview: total users, active listings, pending approvals, total sales, platform revenue,
+- [x] Overview: total users, active listings, pending approvals, total sales, platform revenue,
       pending payouts, orders, disputes (§30)
-- [ ] Users section: view/search/suspend, review seller activity
-- [ ] Suspension invalidates active sessions (enabled by database session strategy) (tech-spec §1)
-- [ ] Categories management (create/edit)
-- [ ] Reports/disputes management queue
-- [ ] Settings: commission, currency, verification rules, shipping settings
-- [ ] Confirm every sensitive admin action across the whole app writes to `AdminAction` (final sweep)
+- [x] Users section: view/search/suspend, review seller activity
+- [x] Suspension invalidates active sessions (enabled by database session strategy) (tech-spec §1)
+- [x] Categories management (create/edit)
+- [x] Reports/disputes management queue
+- [x] Settings: commission, currency, verification rules, shipping settings
+- [x] Confirm every sensitive admin action across the whole app writes to `AdminAction` (final sweep)
 
 ---
 
 ## Phase 12 — Responsive Pass + Design QA
 
-- [ ] Intentional (not shrunk) mobile layouts for homepage, browse, item detail, dashboard, checkout,
+- [x] Intentional (not shrunk) mobile layouts for homepage, browse, item detail, dashboard, checkout,
       admin (§35)
-- [ ] Tablet/laptop/desktop breakpoint review
-- [ ] Full pass against §45 Anti-AI-Design checklist on every page
-- [ ] Full pass against §50 Final Design Test questions
-- [ ] Empty-state copy review across all list/collection views (brand voice, §38)
-- [ ] Error-state copy review — human, non-technical messages; technical details logged to Sentry
+- [x] Tablet/laptop/desktop breakpoint review
+- [x] Full pass against §45 Anti-AI-Design checklist on every page
+- [x] Full pass against §50 Final Design Test questions
+- [x] Empty-state copy review across all list/collection views (brand voice, §38)
+- [x] Error-state copy review — human, non-technical messages; technical details logged to Sentry
       only (§39)
-- [ ] Confirm currency formatting throughout: UGX whole-shilling display, integer storage (tech-spec §1)
+- [x] Confirm currency formatting throughout: UGX whole-shilling display, integer storage (tech-spec §1)
 
 ---
 

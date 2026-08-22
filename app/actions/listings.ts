@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 
 import { requireAuth } from "@/lib/auth/guards";
 import {
+  resolveActionError,
+} from "@/lib/errors/action-error";
+import {
   createListing,
   updateListingDraft,
   submitListingForReview,
@@ -14,11 +17,18 @@ import type {
   ListingImageInput,
   ListingDocumentInput,
   ListingSubmitInput,
+  ShippingDetailInput,
 } from "@/lib/schemas/listing";
 
 export type ListingActionState = {
   error?: string;
   listingId?: string;
+};
+
+const DEFAULT_SHIPPING: ShippingDetailInput = {
+  isAvailable: true,
+  regions: [],
+  fee: 0,
 };
 
 function str(formData: FormData, key: string): string | undefined {
@@ -75,11 +85,17 @@ function collectListingFields(formData: FormData): ListingDraftInput {
     authenticityNotes: str(formData, "authenticityNotes"),
     images: parseJsonField<ListingImageInput[]>(formData, "images"),
     documents: parseJsonField<ListingDocumentInput[]>(formData, "documents"),
+    shipping: parseJsonField<ShippingDetailInput>(formData, "shipping"),
   };
 }
 
 function collectSubmitFields(formData: FormData): ListingSubmitInput {
-  return collectListingFields(formData) as unknown as ListingSubmitInput;
+  const fields = collectListingFields(formData);
+  return {
+    ...fields,
+    shipping: fields.shipping ?? DEFAULT_SHIPPING,
+    documents: fields.documents ?? [],
+  } as ListingSubmitInput;
 }
 
 function getListingId(formData: FormData) {
@@ -93,10 +109,12 @@ async function withListingErrorHandling<T>(
   try {
     return await action();
   } catch (error) {
-    if (error instanceof ListingServiceError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "listings.mutation",
+      serviceErrors: [ListingServiceError],
+      fallback:
+        "Something went wrong while saving your listing. Please try again.",
+    });
   }
 }
 

@@ -108,8 +108,8 @@ export default async function AdminPayoutsPage({
 
       {payouts.length === 0 ? (
         <EmptyState
-          title="No payouts in this queue"
-          description="Payouts appear here after a buyer completes a purchase."
+          title="No payouts awaiting action."
+          description="Completed sales with pending seller payouts will appear here."
         />
       ) : (
         <ul className="divide-y divide-zinc-200 border border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">

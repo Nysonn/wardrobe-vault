@@ -2,10 +2,13 @@ import Link from "next/link";
 
 import { EmptyState } from "@/components/brand/empty-state";
 import { Container } from "@/components/layout/container";
+import { HeroSection } from "@/components/layout/hero-section";
 import { PageShell } from "@/components/layout/page-shell";
 import { Section } from "@/components/layout/section";
+import { SiteHeader } from "@/components/layout/site-header";
 import { FeaturedSection } from "@/components/listings/featured-section";
 import { Button } from "@/components/ui/button";
+import { HOME_HERO_BACKGROUND_IMAGE } from "@/lib/config/marketing";
 import { getFeaturedListings } from "@/lib/services/listings/public";
 
 export const dynamic = "force-dynamic";
@@ -21,27 +24,26 @@ export default async function Home() {
 
   return (
     <PageShell>
+      <SiteHeader />
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <Section spacing="generous" className="border-b border-border">
-        <Container className="animate-fade-in">
-          <p className="text-[10px] font-medium uppercase tracking-[0.26em] text-muted-foreground">
-            Wardrobe Vault
-          </p>
-          <h1 className="mt-4 max-w-3xl font-heading text-5xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
-            Own what has already been remembered.
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-            A quiet marketplace for fashion with provenance — worn by notable
-            people, held with care, offered to its next chapter.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button render={<Link href="/vault" />}>Explore the Vault</Button>
-            <Button variant="outline" render={<Link href="/sell/new" />}>
-              Sell a Piece
-            </Button>
-          </div>
-        </Container>
-      </Section>
+      <HeroSection backgroundImageUrl={HOME_HERO_BACKGROUND_IMAGE}>
+        <p className="text-[10px] font-medium uppercase tracking-[0.26em] text-muted-foreground">
+          Wardrobe Vault
+        </p>
+        <h1 className="mt-4 max-w-3xl font-heading text-5xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+          Own what has already been remembered.
+        </h1>
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+          A quiet marketplace for fashion with provenance — worn by notable
+          people, held with care, offered to its next chapter.
+        </p>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Button render={<Link href="/vault" />}>Explore the Vault</Button>
+          <Button variant="outline" render={<Link href="/sell/new" />}>
+            Sell a Piece
+          </Button>
+        </div>
+      </HeroSection>
 
       {/* ── Empty state when vault has no published listings ── */}
       {vaultIsEmpty && (

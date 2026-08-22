@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/package.json": {
-    "mtime": 1787063738.8754742,
-    "ast_hash": "30be694acc9102650f4cee42c211fb64",
+    "mtime": 1787404219.685177,
+    "ast_hash": "a645d323cb7b5f5c698978e92bb6f733",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/instrumentation-client.ts": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/auth/config.ts": {
-    "mtime": 1786977436.8021107,
-    "ast_hash": "1fc94baa43d02cca2499558e6b25a9db",
+    "mtime": 1787402513.8798254,
+    "ast_hash": "e5e7d6ead540b2e6fedd11caaa83a887",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/payouts/stateMachine.ts": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/ui/textarea.tsx": {
-    "mtime": 1786967900.7765858,
-    "ast_hash": "d448d2a90e48542e51b93a1189127bf2",
+    "mtime": 1787401135.3704345,
+    "ast_hash": "0c541240f9cefe80f5954781b4f369a5",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/ui/dropdown-menu.tsx": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/ui/input.tsx": {
-    "mtime": 1786985114.5606554,
-    "ast_hash": "4713798803b501b76c79f5a170120694",
+    "mtime": 1787401134.3884633,
+    "ast_hash": "49845d7b3dea4e537acb1f822aa8e8de",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/ui/select.tsx": {
@@ -160,13 +160,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/page.tsx": {
-    "mtime": 1787036879.0862477,
-    "ast_hash": "a4309f733e91d653e0ef544fdcb315f4",
+    "mtime": 1787402254.9790187,
+    "ast_hash": "9a2237aec856c9410e4929e68ae532a2",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/global-error.tsx": {
-    "mtime": 1786968975.596598,
-    "ast_hash": "8c5dd05c249e1c0db90621cd0ab3da01",
+    "mtime": 1787399674.634244,
+    "ast_hash": "dc081786fdf1b0a65cc22185bc01fc4a",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/api/auth/[...nextauth]/route.ts": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/docs/plan.md": {
-    "mtime": 1787065287.0929456,
-    "ast_hash": "fcaede00cd07d976cf2ef2fa3febb063",
+    "mtime": 1787404394.5632935,
+    "ast_hash": "c5d904b65325ea71d9868a48f3a2eec3",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/docs/initial-prompt.md": {
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/prisma/seed.ts": {
-    "mtime": 1786976687.7497296,
-    "ast_hash": "0fb782022977e5444136a56dc52ba122",
+    "mtime": 1787397908.0325148,
+    "ast_hash": "4675e407ced79c6d363b7b5f9ebc7cfc",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/prisma/migrations/20260817141709_init_domain_schema/migration.sql": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/auth/guards.ts": {
-    "mtime": 1786977360.0745127,
-    "ast_hash": "59707245b716b9052a105ccbbe8a7699",
+    "mtime": 1787402504.28994,
+    "ast_hash": "a0205403a2ecfc657b9c481984dca115",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/auth/rate-limit.ts": {
@@ -275,18 +275,18 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/auth/login-form.tsx": {
-    "mtime": 1786977008.7194147,
-    "ast_hash": "44bc2f1458d94654a2cfbcf7c8cab942",
+    "mtime": 1787399742.6122744,
+    "ast_hash": "86dab5a2e5b470bd28f35d2542be5dc2",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/auth/register-form.tsx": {
-    "mtime": 1786977011.906477,
-    "ast_hash": "6b38672b09780872d873e1584e6bc019",
+    "mtime": 1787399767.411935,
+    "ast_hash": "dcd810216416805d5dd4eed26ae209d7",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/auth.ts": {
-    "mtime": 1786977074.0846398,
-    "ast_hash": "7c02adb82a66e0170e5b4bffad3a1a3e",
+    "mtime": 1787399825.7181642,
+    "ast_hash": "efcfac32e9b49677256b30c20e1159ea",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(auth)/layout.tsx": {
@@ -305,13 +305,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/layout.tsx": {
-    "mtime": 1787065221.388541,
-    "ast_hash": "3a2e738d79607f48b5cad6c0c1c02270",
+    "mtime": 1787405596.2459548,
+    "ast_hash": "075320ba5f528942472e4e6338a98a69",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/page.tsx": {
-    "mtime": 1787065251.982728,
-    "ast_hash": "3920a6fafd631fd79d6243b8f1af40db",
+    "mtime": 1787399678.8221824,
+    "ast_hash": "60233b1a6dd5f9b46fb7fa1c3b5d04f3",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/layout/container.tsx": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/brand/error-state.tsx": {
-    "mtime": 1786985192.2506132,
-    "ast_hash": "fc07eafe2b7fe31a65358f661556d615",
+    "mtime": 1787399732.359417,
+    "ast_hash": "9647c69c368a53b6e6c7560a8cf10ee6",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/docs/design-system.md": {
@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/schemas/listing.ts": {
-    "mtime": 1787033371.4460247,
-    "ast_hash": "6a26cdf61b039c285396715839ece5a4",
+    "mtime": 1787403972.9771972,
+    "ast_hash": "1764443543bdd38585d4964a28e82d98",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/cloudinary/config.ts": {
@@ -365,13 +365,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/cloudinary/validate.ts": {
-    "mtime": 1787033371.4260252,
-    "ast_hash": "e39d66ff205a5e5ac60c5a3daf3e1b88",
+    "mtime": 1787403928.6693425,
+    "ast_hash": "1d47a18c0a008899876c2a71eb3b9e6a",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/cloudinary/upload.ts": {
-    "mtime": 1787035223.8698852,
-    "ast_hash": "4e3ae11295120fc077d28af9264ce76f",
+    "mtime": 1787397269.388173,
+    "ast_hash": "8ad01c200ddcb0d09f0b94a47e44ce0a",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/search.ts": {
@@ -385,18 +385,18 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/update.ts": {
-    "mtime": 1787033452.9094212,
-    "ast_hash": "9dc4087547eb599deae79fd1ec8e1036",
+    "mtime": 1787403745.9857767,
+    "ast_hash": "2d2ec6f4f1e53cdb4536759d67192da3",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/errors.ts": {
-    "mtime": 1787033418.9950933,
-    "ast_hash": "ea8b2dc98ea54ef7c04ae949316f8e61",
+    "mtime": 1787403738.1657882,
+    "ast_hash": "8d3faefbf56f5427e4b1e17cd1f542a0",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/mappers.ts": {
-    "mtime": 1787034912.0019834,
-    "ast_hash": "035dd52b575db41358c98631e12266f9",
+    "mtime": 1787403878.6794894,
+    "ast_hash": "c74046e98051458fdf456ecf21390a3f",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/index.ts": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/create.ts": {
-    "mtime": 1787033450.3474722,
-    "ast_hash": "cd61fc72fea140efa16296c9760f2417",
+    "mtime": 1787403750.9297688,
+    "ast_hash": "fa02b62491547efa159a33f1573ec7d3",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/public.ts": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/submit.ts": {
-    "mtime": 1787033454.086398,
-    "ast_hash": "e2918eadc6d970340d2ba57fa1d31802",
+    "mtime": 1787403749.8777704,
+    "ast_hash": "a7ca3af96e85fcb46d56113a49ee5100",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/listings/access.ts": {
@@ -430,8 +430,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/admin/listings.ts": {
-    "mtime": 1787036037.7335389,
-    "ast_hash": "0093f3b0d588b81619fbfcecfd769ba4",
+    "mtime": 1787395745.6082675,
+    "ast_hash": "b0b542e9347a0673fda2aa7722bbf875",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/format/currency.ts": {
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/listings/featured-section.tsx": {
-    "mtime": 1787036715.0348787,
-    "ast_hash": "54d7bda2cd06f74cf9255b400afc8000",
+    "mtime": 1787399391.5580742,
+    "ast_hash": "a38cfcee1741b586285f1cfa693fbd33",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/listings/document-uploader.tsx": {
@@ -470,18 +470,18 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/listings/image-uploader.tsx": {
-    "mtime": 1787035273.961658,
-    "ast_hash": "b22480529b81bae9187f71cdcb77441a",
+    "mtime": 1787404040.4369512,
+    "ast_hash": "5c3c940f76d1618812bd51db2b031384",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/listings/item-card.tsx": {
-    "mtime": 1787036695.8058665,
-    "ast_hash": "d412faa071b689f22a749f83c49361dc",
+    "mtime": 1787399401.8718703,
+    "ast_hash": "0225a7c244c962ccb2ce6c63d3c8bc3e",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/listings/listing-form.tsx": {
-    "mtime": 1787035696.7973304,
-    "ast_hash": "b75310160baffda6338c3bf079fa4d5e",
+    "mtime": 1787403994.6571212,
+    "ast_hash": "925ef91670f5cf0cd7c08a840d0abef0",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/components/admin/listing-action-panel.tsx": {
@@ -490,13 +490,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/listings.ts": {
-    "mtime": 1787035454.7084992,
-    "ast_hash": "39bc526934a6a4348112ad74fefaaa4b",
+    "mtime": 1787403617.8048804,
+    "ast_hash": "ad342e1ef46bcfb2c4f2d45ccfab75ec",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/admin/listings.ts": {
-    "mtime": 1787036064.730214,
-    "ast_hash": "f1175da1c89791aaf6d640f262cc45af",
+    "mtime": 1787400271.8141801,
+    "ast_hash": "f34a0f39293c25cd49e9a36183661aa0",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/api/cloudinary/sign/route.ts": {
@@ -505,28 +505,28 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(marketplace)/layout.tsx": {
-    "mtime": 1787037096.9258223,
-    "ast_hash": "093064e25a0c38bfb691e0ee68efdfe3",
+    "mtime": 1787399312.078735,
+    "ast_hash": "da7669beca35ee0a4f4f4e87234d5191",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(marketplace)/vault/page.tsx": {
-    "mtime": 1787037128.6247196,
-    "ast_hash": "64e903a842d3bfad74cb80d7f4b76125",
+    "mtime": 1787399710.008732,
+    "ast_hash": "718133aad6da9cd6aed90fa5d46361cd",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/layout.tsx": {
-    "mtime": 1787065220.8735378,
-    "ast_hash": "0a6a28c6a36717ba9d0208a235af5f01",
+    "mtime": 1787405614.568312,
+    "ast_hash": "6fa585c20943a93508cc2e36eb396821",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/sell/page.tsx": {
-    "mtime": 1787034483.7427332,
-    "ast_hash": "182f9ad92eda387fa71846a0716ebb10",
+    "mtime": 1787399694.9069486,
+    "ast_hash": "d1064022863a73faa0f27009618b77f7",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/sell/[listingId]/page.tsx": {
-    "mtime": 1787035727.32102,
-    "ast_hash": "9aeba47751a4ffb7c6f1dd1a986ba90c",
+    "mtime": 1787403634.775878,
+    "ast_hash": "9a841fb8f4bb3a5f6316923814dafb1d",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/sell/new/page.tsx": {
@@ -535,13 +535,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/listings/page.tsx": {
-    "mtime": 1787036111.6786432,
-    "ast_hash": "b048a4340ee499b7842164b5b9bf903c",
+    "mtime": 1787399972.0413747,
+    "ast_hash": "4d848c08f123c99a6511f473dce8a493",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/listings/[listingId]/page.tsx": {
-    "mtime": 1787036210.2284207,
-    "ast_hash": "075ab7fc269b37b8d39236f1fdedce0f",
+    "mtime": 1787399514.9077878,
+    "ast_hash": "3fcae92369e188deb74e48388dda36ea",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/db/with-retry.ts": {
@@ -585,13 +585,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/reports.ts": {
-    "mtime": 1787039541.3094854,
-    "ast_hash": "f8d775a69d9c38326dc9a2815c5da47f",
+    "mtime": 1787399916.8880272,
+    "ast_hash": "c0364f8325db589734e379f5227569ef",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(marketplace)/vault/[listingId]/page.tsx": {
-    "mtime": 1787063721.2894077,
-    "ast_hash": "332098b30ef2aa39bea2efdb7556f4a6",
+    "mtime": 1787399408.883733,
+    "ast_hash": "5fddc9675b5ec7d8f6420467774a1e84",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/users/publicProfile.ts": {
@@ -620,8 +620,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/orders/createOrderFromCheckout.ts": {
-    "mtime": 1787065077.6527016,
-    "ast_hash": "fb4203020e2b511b10a59995c7e71bb0",
+    "mtime": 1787395745.3692713,
+    "ast_hash": "c101104e49b46b045989d9d93cc70ad0",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/orders/errors.ts": {
@@ -630,8 +630,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/orders/index.ts": {
-    "mtime": 1787063563.2591772,
-    "ast_hash": "0838ea1905b47f1377ed18e639ea62d2",
+    "mtime": 1787395708.5818582,
+    "ast_hash": "a73ab95b5b1bb2c7caaa575b784176d3",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/orders/calculateOrderTotals.manual-test.ts": {
@@ -685,8 +685,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/checkout.ts": {
-    "mtime": 1787063600.4161606,
-    "ast_hash": "1cdc833384c0123f686aacffcb231a24",
+    "mtime": 1787399834.0730567,
+    "ast_hash": "498dbe7ff00a9b4e9ef787428ceba313",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(marketplace)/checkout/[listingId]/page.tsx": {
@@ -695,13 +695,13 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/orders/page.tsx": {
-    "mtime": 1787063640.652197,
-    "ast_hash": "c52489d6a76f123ddddf23415cafe18c",
+    "mtime": 1787399732.8044107,
+    "ast_hash": "93633b6d6a323ecf29b071c4910c612b",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/orders/[orderId]/page.tsx": {
-    "mtime": 1787063638.9371943,
-    "ast_hash": "e0cca5fe280404a8e1ff269aa653e537",
+    "mtime": 1787396574.2273004,
+    "ast_hash": "6b76f46465cbc8163f6af7c46e9e444f",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/schemas/payout.ts": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/payouts/transitionPayoutStatus.ts": {
-    "mtime": 1787065967.2725909,
-    "ast_hash": "cfadd00e34f67e98750ec48863e1d0c7",
+    "mtime": 1787395812.3782656,
+    "ast_hash": "f75e59fda7077cb275979ccd4ae47372",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/lib/services/admin/payouts.ts": {
@@ -770,23 +770,23 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/admin/payouts.ts": {
-    "mtime": 1787065094.5777967,
-    "ast_hash": "4598ff168abeb59d448e29c46a6ca70a",
+    "mtime": 1787400698.666267,
+    "ast_hash": "d04cf8476b4d3063db0517f8fa6caf48",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/actions/admin/commission.ts": {
-    "mtime": 1787065097.1948116,
-    "ast_hash": "65fdd183de896ebc2c5781258f6e453c",
+    "mtime": 1787400693.8273087,
+    "ast_hash": "5cca91eedefe300d134ee948d5178b42",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/(dashboard)/wallet/page.tsx": {
-    "mtime": 1787065152.2861288,
-    "ast_hash": "736845ecc8042e4ac154164fa15e551e",
+    "mtime": 1787399732.8084106,
+    "ast_hash": "01ff4bc0fbc1812e9646aba24c31ffe9",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/payouts/page.tsx": {
-    "mtime": 1787065167.0832157,
-    "ast_hash": "30abb091c8a4ab97e6acfdd2fb3d4baf",
+    "mtime": 1787399709.9157333,
+    "ast_hash": "3c7f286223de6798cbfaa97e03b30aeb",
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/payouts/[payoutId]/page.tsx": {
@@ -795,8 +795,458 @@
     "semantic_hash": ""
   },
   "/home/nyson/wardrobe-web-app/app/admin/settings/commission/page.tsx": {
-    "mtime": 1787065967.8695953,
-    "ast_hash": "f5d02ff3537eefc060b2117558322ea5",
+    "mtime": 1787397889.1285627,
+    "ast_hash": "3a6e56aacde6b4658ffdb0d4cfda487a",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/schemas/message.ts": {
+    "mtime": 1787395666.9435549,
+    "ast_hash": "53175e34c129a1add86fe6de5f9f8d20",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/schemas/wishlist.ts": {
+    "mtime": 1787395610.317563,
+    "ast_hash": "338bb18410bd1e520a2e6f7d4e275f2b",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/verification/notifications.ts": {
+    "mtime": 1787397252.6951504,
+    "ast_hash": "b1f2e67de105cf00aff5c11450324cd9",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/sendMessage.ts": {
+    "mtime": 1787404373.5114052,
+    "ast_hash": "33e2fd7b994d5d39017cda1a939318f4",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/queries.ts": {
+    "mtime": 1787395673.134449,
+    "ast_hash": "55b86c9bbc3fb174f1671b0fff962680",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/errors.ts": {
+    "mtime": 1787395666.946555,
+    "ast_hash": "ab46e8e74c09977a9f2366591c263d19",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/index.ts": {
+    "mtime": 1787404866.110531,
+    "ast_hash": "afd08fb29c1044510d0e0f694a0bd167",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/threadId.ts": {
+    "mtime": 1787395666.946555,
+    "ast_hash": "0aa51ff2a254a4dbd42ee3a44138cb59",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/wishlist/toggleFavorite.ts": {
+    "mtime": 1787395610.4305608,
+    "ast_hash": "569f993a9d5d332992a209da6c606251",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/wishlist/errors.ts": {
+    "mtime": 1787395610.3445625,
+    "ast_hash": "a50f11d2ce1e7295957ab1a4ca3f87f1",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/wishlist/index.ts": {
+    "mtime": 1787395613.1655104,
+    "ast_hash": "b865715792c74d0ff819502ac4a49332",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/wishlist/listFavorites.ts": {
+    "mtime": 1787395613.1655104,
+    "ast_hash": "2951998bbb07b6a42fcb5b579110c952",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/wishlist/isFavorited.ts": {
+    "mtime": 1787395610.2845635,
+    "ast_hash": "2be0880f066228413eb5161d1b3832ca",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/notifications/queries.ts": {
+    "mtime": 1787395665.7465754,
+    "ast_hash": "13ce1c36baa60704ca771b7fb57b4abd",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/notifications/createNotification.ts": {
+    "mtime": 1787395665.018588,
+    "ast_hash": "ad444bacfed41f2f5807529b3ce5cb76",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/notifications/index.ts": {
+    "mtime": 1787395665.7465754,
+    "ast_hash": "a7c03cbf9d3398d4f10e5b54775baa13",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/orders/transitionOrderStatus.ts": {
+    "mtime": 1787398121.8009088,
+    "ast_hash": "9743deb6f7ca9af906281b636a632b15",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/listings/wishlist-button.tsx": {
+    "mtime": 1787395909.9389296,
+    "ast_hash": "4f989a594859c9575f8a97c70920ce7e",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/dashboard-nav.tsx": {
+    "mtime": 1787399365.892593,
+    "ast_hash": "e592fada9325d055c7251e1cad687685",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/messages/message-thread.tsx": {
+    "mtime": 1787404848.5476406,
+    "ast_hash": "c5e5292d76000b49f9c65b70800e1da8",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/notifications/notification-bell.tsx": {
+    "mtime": 1787396878.1240058,
+    "ast_hash": "07c4586af37de14354bdd21589be2469",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/messages.ts": {
+    "mtime": 1787399896.8312707,
+    "ast_hash": "06dedf479c9156c0e2ffe8cc9b9a511c",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/wishlist.ts": {
+    "mtime": 1787399889.1503649,
+    "ast_hash": "c449c9fdca3a14296e7a5b2905236fbf",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/notifications.ts": {
+    "mtime": 1787395842.3998394,
+    "ast_hash": "d39b17967e623ef148f81b5ad0da72ab",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/orders.ts": {
+    "mtime": 1787400030.3917096,
+    "ast_hash": "a29cbf40ede72bdb45028f651adea165",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/api/messages/[threadId]/route.ts": {
+    "mtime": 1787395846.6727798,
+    "ast_hash": "011f93a663a6e783aea1d989c1b9bd67",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/api/notifications/route.ts": {
+    "mtime": 1787395846.66778,
+    "ast_hash": "2df9c7a27c9695df5b23a3679b667b95",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/(dashboard)/messages/page.tsx": {
+    "mtime": 1787396014.0796437,
+    "ast_hash": "b42873c151fedb247aad48c00be5bee3",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/(dashboard)/messages/[threadId]/page.tsx": {
+    "mtime": 1787404350.1375277,
+    "ast_hash": "bc204e673b8e5f8cb895058199be1f73",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/(dashboard)/wishlist/page.tsx": {
+    "mtime": 1787395994.8538716,
+    "ast_hash": "e106b7332fdcdd39e09c83cefa83af10",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/(dashboard)/notifications/page.tsx": {
+    "mtime": 1787396005.3727465,
+    "ast_hash": "897e809ca9f9b7e5df9fb8b143f0aba6",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/schemas/verification.ts": {
+    "mtime": 1787397243.5661368,
+    "ast_hash": "4f47ea90eb172dcbf121820824e4b0a2",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/verification/errors.ts": {
+    "mtime": 1787397243.598137,
+    "ast_hash": "9da266ecf5c51b3da0b23515755c3c83",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/verification/index.ts": {
+    "mtime": 1787397247.092142,
+    "ast_hash": "af2dc5d9530aaa43504e76a95e33af32",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/verification/submitApplication.ts": {
+    "mtime": 1787397247.092142,
+    "ast_hash": "caa6309ff17a2320f01f5af83d122ee5",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/verification.ts": {
+    "mtime": 1787397376.855253,
+    "ast_hash": "0ca59e917e2d2e6e5af43f760d3c1df1",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/verification/evidence-uploader.tsx": {
+    "mtime": 1787399989.6621711,
+    "ast_hash": "d604c23ca9180c6f5b2e518b6fbe650c",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/verification/verification-application-form.tsx": {
+    "mtime": 1787397280.6661868,
+    "ast_hash": "6a88fdeab649cb78cd74434d0b595f63",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/verification-action-panel.tsx": {
+    "mtime": 1787397285.7161925,
+    "ast_hash": "eca96a999ab11873a2bd30492a5abf9b",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/verification.ts": {
+    "mtime": 1787399904.8021734,
+    "ast_hash": "7107aa0337382efada6d4668e6228fd3",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/verification.ts": {
+    "mtime": 1787400681.7384133,
+    "ast_hash": "d7b43e2480ffa658c800c2fe19138bf6",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/(dashboard)/verify/page.tsx": {
+    "mtime": 1787397378.4702532,
+    "ast_hash": "88d696bfa3eba8f5867da72bbdec038b",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/verification/page.tsx": {
+    "mtime": 1787400011.176926,
+    "ast_hash": "b07c237a852de3a114f61103ad058435",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/verification/[applicationId]/page.tsx": {
+    "mtime": 1787397316.0512211,
+    "ast_hash": "7f3313a416d274abd306d07a360daf6f",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/schemas/admin.ts": {
+    "mtime": 1787397654.4220479,
+    "ast_hash": "0c7cd2286189aec74fd0ab199c262649",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/config/platform-settings.ts": {
+    "mtime": 1787397601.4531236,
+    "ast_hash": "3af4aaeb62857f0fd2a9f79ea44bcc09",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/types/admin-order.ts": {
+    "mtime": 1787398074.581052,
+    "ast_hash": "16aaaa24c3290768a8512f20e55ebe58",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/utils/slugify.ts": {
+    "mtime": 1787397601.6501234,
+    "ast_hash": "99658aa82a2b48180b2194a3f5f42298",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/orders.ts": {
+    "mtime": 1787397624.6400921,
+    "ast_hash": "a9e2b3a4b6fd56cbe1ae0ef5f5327bff",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/overview.ts": {
+    "mtime": 1787397612.7871087,
+    "ast_hash": "a7531a3eb581a731d7ffb2b924adde92",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/reports.ts": {
+    "mtime": 1787397622.9570947,
+    "ast_hash": "d2fcbddb72c81616e23dd17806813c86",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/categories.ts": {
+    "mtime": 1787397618.353101,
+    "ast_hash": "7efbf059228181491d3b8ecb47fbe450",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/users.ts": {
+    "mtime": 1787397616.2841039,
+    "ast_hash": "17cbd9c724855799920dc0efcd23ecfe",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/admin/settings.ts": {
+    "mtime": 1787398657.823052,
+    "ast_hash": "7fdf53fb27c011fdf1f40993d9c2a495",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/prisma/migrations/20260822112656_add_platform_settings/migration.sql": {
+    "mtime": 1787398016.6882207,
+    "ast_hash": "7a65a929348435b904c92a33d0519348",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/category-create-form.tsx": {
+    "mtime": 1787397686.6109948,
+    "ast_hash": "80d1db071406db5a0250155b5d2770af",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/user-action-panel.tsx": {
+    "mtime": 1787397675.201014,
+    "ast_hash": "437451ef6caa9467443a249ab137f769",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/category-row.tsx": {
+    "mtime": 1787397687.8209927,
+    "ast_hash": "f18103bfc04c5ee1454f1e7a66d90e66",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/report-action-panel.tsx": {
+    "mtime": 1787397678.887008,
+    "ast_hash": "95a581fd6dedd7e63df3f5ac1eaae213",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/marketplace-settings-form.tsx": {
+    "mtime": 1787397690.2499886,
+    "ast_hash": "acb7d7642a7eb2c6751e84b464a38850",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/admin/order-action-panel.tsx": {
+    "mtime": 1787398201.7896566,
+    "ast_hash": "ca521446cfd950baa99264aa8fbed41e",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/reports.ts": {
+    "mtime": 1787400562.2334638,
+    "ast_hash": "f0fa804c9cf6e797a26153e066d7c800",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/categories.ts": {
+    "mtime": 1787400639.9317775,
+    "ast_hash": "0e3d1d7987d7019eaebadf70a1b3d7dc",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/users.ts": {
+    "mtime": 1787400727.6500175,
+    "ast_hash": "63420efdf01f258e3994793798d59f92",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/actions/admin/settings.ts": {
+    "mtime": 1787400239.936497,
+    "ast_hash": "91cfff4fe4d0c4d9356cb6d106ea49b2",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/users/page.tsx": {
+    "mtime": 1787399709.3737411,
+    "ast_hash": "50bd31535ed8e86f870ac180891f52c2",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/users/[userId]/page.tsx": {
+    "mtime": 1787397730.5469148,
+    "ast_hash": "48a1eeff00df37a3d9751a448ba3fb33",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/categories/page.tsx": {
+    "mtime": 1787399722.1425602,
+    "ast_hash": "b94480bbed37d0ef35fe77d5e926395b",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/reports/page.tsx": {
+    "mtime": 1787400011.1779258,
+    "ast_hash": "ccd3f815de153df4555d2dc0eecb98c7",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/reports/[reportId]/page.tsx": {
+    "mtime": 1787397770.8098342,
+    "ast_hash": "46d0a9f2d9f8caf032969cf3f6d69edc",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/settings/page.tsx": {
+    "mtime": 1787397790.3577929,
+    "ast_hash": "4d10682cdeda882789c24f5f71e33248",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/orders/page.tsx": {
+    "mtime": 1787400011.1779258,
+    "ast_hash": "af575787e25b165b5bacbe1165d18107",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/admin/orders/[orderId]/page.tsx": {
+    "mtime": 1787398505.574612,
+    "ast_hash": "1a6e7ed2ba3e4130409f3a043fc0714c",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/listings/listing-purchase-bar.tsx": {
+    "mtime": 1787399170.9801373,
+    "ast_hash": "cdafac26940f1b332af63cb4c3d0719f",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/listings/vault-filters-panel.tsx": {
+    "mtime": 1787399168.657199,
+    "ast_hash": "4d1406480e6a5783303a72cc6543063c",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/site-header.tsx": {
+    "mtime": 1787402376.75849,
+    "ast_hash": "807ed011292fb4a8220bc6fed698998f",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/site-header-menu.tsx": {
+    "mtime": 1787399168.1842115,
+    "ast_hash": "0ac587c31c3ef146bcae45c7562ee952",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/errors/action-error.ts": {
+    "mtime": 1787399670.5663037,
+    "ast_hash": "4a3c3559916699b8ec527c77321c882f",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/not-found.tsx": {
+    "mtime": 1787399671.5202897,
+    "ast_hash": "aafa9d2d4786c45ee72954048e76d31a",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/error.tsx": {
+    "mtime": 1787399673.1722655,
+    "ast_hash": "6d350d8f8ca852c5f8d86f8cfc5e7411",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/config/marketing.ts": {
+    "mtime": 1787402247.8751097,
+    "ast_hash": "3eea57f4d2595917f30b507bca90ee28",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/hero-section.tsx": {
+    "mtime": 1787402249.6250873,
+    "ast_hash": "b7adc3f0086b5720a9c96cf2b8e0a735",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/site-header-shell.tsx": {
+    "mtime": 1787402504.5869365,
+    "ast_hash": "2656e37308126f7efa7ef0188dcf686c",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/services/messages/stream.ts": {
+    "mtime": 1787404231.7801197,
+    "ast_hash": "3291af0272fae8aacd4be18bdfe943f4",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/stream/channels.ts": {
+    "mtime": 1787404634.3449407,
+    "ast_hash": "e3bfb9edff81ad1e92468804865243ee",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/stream/config.ts": {
+    "mtime": 1787404229.7331295,
+    "ast_hash": "a4716637f0d0530d20e868b939959f8d",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/stream/users.ts": {
+    "mtime": 1787404229.7391293,
+    "ast_hash": "70be4b32a869080d15776c7f61300274",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/lib/stream/channelId.ts": {
+    "mtime": 1787404229.7381294,
+    "ast_hash": "ada79f0d4c9babf153190c63f3c5a968",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/app/api/stream/token/route.ts": {
+    "mtime": 1787404231.7981195,
+    "ast_hash": "7837ad5e6d4edc83115b0fff2024695a",
+    "semantic_hash": ""
+  },
+  "/home/nyson/wardrobe-web-app/components/layout/dashboard-sidebar-layout.tsx": {
+    "mtime": 1787405613.8063383,
+    "ast_hash": "312ce113024dedf882907b34051cc9ce",
     "semantic_hash": ""
   }
 }

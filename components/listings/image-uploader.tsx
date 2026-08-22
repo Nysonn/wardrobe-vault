@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { uploadListingImage } from "@/lib/cloudinary/upload";
 import {
   LISTING_IMAGE_MAX_COUNT,
-  type ListingImageInput,
+  type ListingImageDraftInput,
 } from "@/lib/schemas/listing";
 
 type UploadState =
@@ -16,8 +16,8 @@ type UploadState =
   | { status: "error"; message: string };
 
 type Props = {
-  value: ListingImageInput[];
-  onChange: (images: ListingImageInput[]) => void;
+  value: ListingImageDraftInput[];
+  onChange: (images: ListingImageDraftInput[]) => void;
 };
 
 export function ImageUploader({ value, onChange }: Props) {
@@ -34,7 +34,7 @@ export function ImageUploader({ value, onChange }: Props) {
     if (available <= 0) return;
 
     const toUpload = Array.from(files).slice(0, available);
-    const results: ListingImageInput[] = [...value];
+    const results: ListingImageDraftInput[] = [...value];
 
     for (const file of toUpload) {
       setUploadState({ status: "uploading", fileName: file.name });

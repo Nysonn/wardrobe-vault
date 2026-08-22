@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/brand/empty-state";
+import { formatUgx } from "@/lib/format/currency";
 import { ListingStatus } from "@/lib/generated/prisma/enums";
 import {
   getAdminListingQueue,
@@ -11,8 +12,7 @@ import {
 } from "@/lib/services/admin/listings";
 
 const TABS: { id: AdminListingTab; label: string }[] = [
-  { id: "submitted", label: "Submitted" },
-  { id: "under-review", label: "Under review" },
+  { id: "pending", label: "Pending review" },
   { id: "approved", label: "Approved" },
   { id: "all", label: "All active" },
 ];
@@ -40,15 +40,6 @@ function formatDate(date: Date | null | undefined) {
   }).format(new Date(date));
 }
 
-function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-UG", {
-    style: "currency",
-    currency: "UGX",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(price);
-}
-
 type SearchParams = Promise<{ tab?: string }>;
 
 export default async function AdminListingsPage({
@@ -57,17 +48,17 @@ export default async function AdminListingsPage({
   searchParams: SearchParams;
 }) {
   const params = await searchParams;
-  const validTabs: AdminListingTab[] = [
-    "submitted",
-    "under-review",
-    "approved",
-    "all",
-  ];
+  const validTabs: AdminListingTab[] = ["pending", "approved", "all"];
+  const tabParam = params.tab;
+  const normalizedTab =
+    tabParam === "submitted" || tabParam === "under-review"
+      ? "pending"
+      : tabParam;
   const activeTab: AdminListingTab = validTabs.includes(
-    params.tab as AdminListingTab,
+    normalizedTab as AdminListingTab,
   )
-    ? (params.tab as AdminListingTab)
-    : "submitted";
+    ? (normalizedTab as AdminListingTab)
+    : "pending";
 
   const [listings, counts] = await Promise.all([
     getAdminListingQueue(activeTab),
@@ -86,17 +77,17 @@ export default async function AdminListingsPage({
       </div>
 
       {/* Tabs */}
-      <nav className="flex gap-1 border-b border-zinc-200 dark:border-zinc-800">
+      <nav className="-mx-4 flex gap-1 overflow-x-auto border-b border-zinc-200 px-4 pb-px dark:border-zinc-800 sm:mx-0 sm:px-0">
         {TABS.map((tab) => {
           const count =
-            tab.id !== "all" ? (counts[tab.id] ?? 0) : undefined;
+            tab.id === "pending" ? (counts.pending ?? 0) : tab.id === "approved" ? (counts.approved ?? 0) : undefined;
           const isActive = activeTab === tab.id;
           return (
             <Link
               key={tab.id}
               href={`/admin/listings?tab=${tab.id}`}
               className={[
-                "inline-flex items-center gap-1.5 px-3 py-2.5 text-sm transition-colors",
+                "inline-flex shrink-0 items-center gap-1.5 px-3 py-2.5 text-sm transition-colors",
                 isActive
                   ? "border-b-2 border-zinc-900 font-medium text-zinc-900 dark:border-zinc-100 dark:text-zinc-100"
                   : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100",
@@ -117,8 +108,8 @@ export default async function AdminListingsPage({
       {/* Table */}
       {listings.length === 0 ? (
         <EmptyState
-          title="Nothing here."
-          description="No listings in this queue right now."
+          title="This queue is clear."
+          description="No listings awaiting attention in this view."
         />
       ) : (
         <ul className="divide-y divide-zinc-100 dark:divide-zinc-800">
@@ -155,7 +146,7 @@ export default async function AdminListingsPage({
                     </p>
                     <p className="mt-0.5 text-xs text-zinc-500">
                       {listing.category?.name ?? "—"} ·{" "}
-                      {formatPrice(listing.price)} ·{" "}
+                      {formatUgx(listing.price)} ·{" "}
                       {listing.seller.name ?? listing.seller.email}
                     </p>
                   </div>

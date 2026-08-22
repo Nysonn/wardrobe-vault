@@ -106,7 +106,7 @@ export default async function SellPage({
           {/* Tab navigation */}
           <nav
             aria-label="Listing tabs"
-            className="flex gap-1 border-b border-border"
+        className="-mx-4 flex gap-1 overflow-x-auto border-b border-border px-4 pb-px sm:mx-0 sm:px-0"
           >
             {TABS.map((tab) => {
               const count = counts[tab.id] ?? 0;
@@ -116,7 +116,7 @@ export default async function SellPage({
                   key={tab.id}
                   href={`/sell?tab=${tab.id}`}
                   className={[
-                    "inline-flex items-center gap-1.5 px-3 py-2.5 text-sm transition-colors",
+                    "inline-flex shrink-0 items-center gap-1.5 px-3 py-2.5 text-sm transition-colors",
                     isActive
                       ? "border-b-2 border-foreground font-medium text-foreground"
                       : "text-muted-foreground hover:text-foreground",

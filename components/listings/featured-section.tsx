@@ -49,19 +49,26 @@ export function FeaturedSection({
           )}
         </div>
 
-        {/* Cards — horizontal scroll on mobile, 3-col grid on md+ */}
+        {/* Cards — horizontal scroll on mobile, grid on md+ */}
         <div
           className={cn(
-            "grid gap-x-6 gap-y-10",
             listings.length >= 3
-              ? "grid-cols-2 sm:grid-cols-3"
+              ? "flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-x-6 md:gap-y-10 md:overflow-visible md:pb-0"
               : listings.length === 2
-                ? "grid-cols-2"
-                : "grid-cols-1 sm:max-w-xs",
+                ? "grid grid-cols-2 gap-x-6 gap-y-10"
+                : "grid grid-cols-1 sm:max-w-xs",
           )}
         >
           {listings.map((listing) => (
-            <ItemCard key={listing.id} listing={listing} />
+            <ItemCard
+              key={listing.id}
+              listing={listing}
+              className={
+                listings.length >= 3
+                  ? "w-[72vw] shrink-0 snap-start md:w-auto"
+                  : undefined
+              }
+            />
           ))}
         </div>
       </Container>

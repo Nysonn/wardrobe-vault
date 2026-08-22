@@ -7,8 +7,13 @@ import type {
   ShippingDetailInput,
 } from "@/lib/schemas/listing";
 
+type ListingImageWriteInput = Omit<ListingImageInput, "width" | "height"> & {
+  width?: number;
+  height?: number;
+};
+
 type ListingWriteInput = ListingDraftInput & {
-  images?: ListingImageInput[];
+  images?: ListingImageWriteInput[];
   documents?: ListingDocumentInput[];
   shipping?: Partial<ShippingDetailInput>;
 };

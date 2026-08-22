@@ -1,61 +1,58 @@
 import Link from "next/link";
 
 import { signOutAction } from "@/app/actions/auth";
+import {
+  DashboardSidebarLayout,
+  type SidebarNavLink,
+} from "@/components/layout/dashboard-sidebar-layout";
+import { NotificationBell } from "@/components/notifications/notification-bell";
 import { requireAuth } from "@/lib/auth/guards";
+
+const NAV_LINKS: readonly SidebarNavLink[] = [
+  { href: "/sell", label: "My listings" },
+  { href: "/orders", label: "Orders" },
+  { href: "/wallet", label: "Earnings" },
+  { href: "/wishlist", label: "Saved" },
+  { href: "/messages", label: "Messages" },
+  { href: "/verify", label: "Verification" },
+  { href: "/sell/new", label: "New listing" },
+] as const;
 
 export default async function DashboardLayout({
   children,
 }: LayoutProps<"/">) {
   const session = await requireAuth();
+  const userLabel = session.user.name ?? session.user.email ?? "Member";
 
   return (
-    <div className="flex min-h-full flex-col">
-      <header className="border-b border-border bg-background">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link
-            href="/"
-            className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Wardrobe Vault
-          </Link>
-          <nav className="flex items-center gap-6 text-sm">
+    <DashboardSidebarLayout
+      title="My Vault"
+      links={NAV_LINKS}
+      tone="vault"
+      topBar={<NotificationBell />}
+      sidebarFooter={
+        <>
+          <p className="truncate text-foreground">{userLabel}</p>
+          <div className="mt-3 flex flex-col gap-2">
             <Link
-              href="/sell"
-              className="text-foreground underline-offset-4 hover:underline"
+              href="/vault"
+              className="transition-colors hover:text-foreground"
             >
-              My Listings
+              Browse the Vault
             </Link>
-            <Link
-              href="/orders"
-              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-            >
-              Orders
-            </Link>
-            <Link
-              href="/wallet"
-              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-            >
-              Earnings
-            </Link>
-            <Link
-              href="/sell/new"
-              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-            >
-              New listing
-            </Link>
-            <span className="text-muted-foreground">{session.user.name ?? session.user.email}</span>
             <form action={signOutAction}>
               <button
                 type="submit"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="transition-colors hover:text-foreground"
               >
                 Sign out
               </button>
             </form>
-          </nav>
-        </div>
-      </header>
-      <main className="flex-1">{children}</main>
-    </div>
+          </div>
+        </>
+      }
+    >
+      {children}
+    </DashboardSidebarLayout>
   );
 }

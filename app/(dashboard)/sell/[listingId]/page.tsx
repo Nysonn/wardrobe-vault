@@ -58,8 +58,8 @@ export default async function EditListingPage({ params }: PageProps) {
               images: listing.images.map((img, i) => ({
                 cloudinaryPublicId: img.cloudinaryPublicId,
                 url: img.url,
-                width: img.width ?? 0,
-                height: img.height ?? 0,
+                ...(img.width && img.width > 0 ? { width: img.width } : {}),
+                ...(img.height && img.height > 0 ? { height: img.height } : {}),
                 sortOrder: img.sortOrder ?? i,
                 altText: img.altText ?? undefined,
               })),
@@ -70,6 +70,18 @@ export default async function EditListingPage({ params }: PageProps) {
                 fileName: doc.fileName ?? undefined,
                 mimeType: doc.mimeType ?? undefined,
               })),
+              shipping: listing.shippingDetail
+                ? {
+                    isAvailable: listing.shippingDetail.isAvailable,
+                    regions: listing.shippingDetail.regions,
+                    fee: listing.shippingDetail.fee,
+                    estimatedDaysMin:
+                      listing.shippingDetail.estimatedDaysMin ?? undefined,
+                    estimatedDaysMax:
+                      listing.shippingDetail.estimatedDaysMax ?? undefined,
+                    notes: listing.shippingDetail.notes ?? undefined,
+                  }
+                : undefined,
             }}
           />
         </Container>

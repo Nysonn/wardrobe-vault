@@ -3,6 +3,10 @@
 import { revalidatePath } from "next/cache";
 
 import { requireAdmin } from "@/lib/auth/guards";
+import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
 import { adminPayoutActionSchema } from "@/lib/schemas/payout";
 import {
   AdminPayoutError,
@@ -30,7 +34,7 @@ export async function adminPayoutActionAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Invalid request.",
+      error: validationMessage(parsed.error, "Please check the payout action."),
     };
   }
 
@@ -43,13 +47,10 @@ export async function adminPayoutActionAction(
       failureReason: parsed.data.failureReason,
     });
   } catch (error) {
-    if (
-      error instanceof AdminPayoutError ||
-      error instanceof PayoutServiceError
-    ) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "admin.payouts.action",
+      serviceErrors: [AdminPayoutError, PayoutServiceError],
+    });
   }
 
   revalidatePath("/admin/payouts");

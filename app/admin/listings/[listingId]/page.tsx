@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ListingActionPanel } from "@/components/admin/listing-action-panel";
+import { formatUgx } from "@/lib/format/currency";
 import { Badge } from "@/components/ui/badge";
 import { ListingStatus } from "@/lib/generated/prisma/enums";
 import { getAdminListingDetail } from "@/lib/services/admin/listings";
@@ -24,15 +25,6 @@ function formatDate(date: Date | null | undefined) {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(date));
-}
-
-function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-UG", {
-    style: "currency",
-    currency: "UGX",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(price);
 }
 
 const STATUS_LABEL: Partial<Record<ListingStatus, string>> = {
@@ -162,7 +154,7 @@ export default async function AdminListingDetailPage({ params }: PageProps) {
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Category" value={listing.category?.name} />
-              <Field label="Price" value={formatPrice(listing.price)} />
+              <Field label="Price" value={formatUgx(listing.price)} />
               <Field label="Brand" value={listing.brand} />
               <Field label="Designer" value={listing.designer} />
               <Field label="Size" value={listing.size} />

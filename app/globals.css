@@ -156,10 +156,11 @@
 
   html {
     @apply font-sans;
+    font-size: 112.5%; /* 18px at default — comfortable reading size */
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased text-base;
   }
 
   h1,
@@ -208,7 +209,7 @@
   }
 
   .text-ui {
-    @apply font-sans text-sm leading-relaxed;
+    @apply font-sans text-base leading-relaxed;
   }
 
   .surface-quiet {

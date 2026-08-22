@@ -9,6 +9,7 @@ import { requireAuth } from "@/lib/auth/guards";
 import { formatUgx } from "@/lib/format/currency";
 import { OrderStatus } from "@/lib/generated/prisma/enums";
 import { getOrderForBuyer } from "@/lib/services/orders";
+import { buildThreadId } from "@/lib/services/messages";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +46,7 @@ export default async function OrderDetailPage({
 
   const item = order.items[0];
   const imageUrl = item?.listing.images[0]?.url;
+  const messageThreadId = buildThreadId(session.user.id, order.seller.id);
 
   return (
     <>
@@ -132,6 +134,12 @@ export default async function OrderDetailPage({
             <div className="mt-10 flex flex-wrap gap-4">
               <Button variant="outline" render={<Link href="/orders" />}>
                 All orders
+              </Button>
+              <Button
+                variant="outline"
+                render={<Link href={`/messages/${messageThreadId}`} />}
+              >
+                Message seller
               </Button>
               <Button variant="outline" render={<Link href="/vault" />}>
                 Continue browsing

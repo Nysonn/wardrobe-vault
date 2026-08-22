@@ -5,6 +5,10 @@ import { redirect } from "next/navigation";
 import { requireAuth } from "@/lib/auth/guards";
 import { checkoutListingIdSchema } from "@/lib/schemas/checkout";
 import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
+import {
   createOrderFromCheckout,
   OrderServiceError,
 } from "@/lib/services/orders";
@@ -24,7 +28,10 @@ export async function confirmPurchaseAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Invalid purchase request.",
+      error: validationMessage(
+        parsed.error,
+        "We couldn't process this purchase. Return to the listing and try again.",
+      ),
     };
   }
 
@@ -36,9 +43,11 @@ export async function confirmPurchaseAction(
 
     redirect(`/orders/${result.orderId}?confirmed=1`);
   } catch (error) {
-    if (error instanceof OrderServiceError) {
-      return { error: error.message };
-    }
-    throw error;
+    return resolveActionError(error, {
+      context: "checkout.confirmPurchase",
+      serviceErrors: [OrderServiceError],
+      fallback:
+        "Something went wrong while confirming your purchase. Please try again.",
+    });
   }
 }

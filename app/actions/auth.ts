@@ -6,6 +6,13 @@ import { redirect } from "next/navigation";
 
 import { signIn, signOut } from "@/lib/auth/config";
 import {
+  resolvePostLoginRedirect,
+} from "@/lib/auth/guards";
+import {
+  resolveActionError,
+  validationMessage,
+} from "@/lib/errors/action-error";
+import {
   enforceRateLimit,
   getClientIp,
   RateLimitError,
@@ -15,6 +22,7 @@ import {
   registerUser,
   RegistrationError,
 } from "@/lib/services/users/register";
+import { prisma } from "@/lib/prisma";
 
 export type AuthActionState = {
   error?: string;
@@ -35,7 +43,7 @@ export async function loginAction(
   });
 
   if (!parsed.success) {
-    return { error: "Enter a valid email and password." };
+    return { error: validationMessage(parsed.error, "Enter a valid email and password.") };
   }
 
   const ip = await getRequestIp();
@@ -50,29 +58,34 @@ export async function loginAction(
     if (error instanceof RateLimitError) {
       return { error: error.message };
     }
-    throw error;
+    return resolveActionError(error, { context: "auth.login.rateLimit" });
   }
 
   const callbackUrl = formData.get("callbackUrl");
-  const redirectTo =
-    typeof callbackUrl === "string" && callbackUrl.startsWith("/")
-      ? callbackUrl
-      : "/";
 
   try {
-    await signIn("credentials", {
+    const result = await signIn("credentials", {
       email: parsed.data.email,
       password: parsed.data.password,
-      redirectTo,
+      redirect: false,
     });
+
+    if (typeof result === "string" && result.includes("error=")) {
+      return { error: "Email or password is incorrect." };
+    }
   } catch (error) {
     if (error instanceof AuthError) {
       return { error: "Email or password is incorrect." };
     }
-    throw error;
+    return resolveActionError(error, { context: "auth.login" });
   }
 
-  return {};
+  const user = await prisma.user.findUnique({
+    where: { email: parsed.data.email },
+    select: { role: true },
+  });
+
+  redirect(resolvePostLoginRedirect(callbackUrl, user?.role));
 }
 
 export async function registerAction(
@@ -88,7 +101,7 @@ export async function registerAction(
 
   if (!parsed.success) {
     return {
-      error: parsed.error.issues[0]?.message ?? "Please check your details.",
+      error: validationMessage(parsed.error, "Please check your details."),
     };
   }
 
@@ -104,7 +117,7 @@ export async function registerAction(
     if (error instanceof RateLimitError) {
       return { error: error.message };
     }
-    throw error;
+    return resolveActionError(error, { context: "auth.register.rateLimit" });
   }
 
   try {
@@ -113,7 +126,7 @@ export async function registerAction(
     if (error instanceof RegistrationError) {
       return { error: error.message };
     }
-    throw error;
+    return resolveActionError(error, { context: "auth.register" });
   }
 
   redirect("/login?registered=1");

@@ -181,3 +181,27 @@ export async function uploadListingDocument(
     mimeType: file.type,
   };
 }
+
+export type VerificationEvidenceUpload = {
+  url: string;
+  fileName: string;
+};
+
+/**
+ * Validate, then upload verification evidence to Cloudinary (document folder).
+ */
+export async function uploadVerificationEvidence(
+  file: File,
+): Promise<VerificationEvidenceUpload> {
+  const validationError = validateDocumentFile(file);
+  if (validationError) throw new Error(validationError.message);
+
+  const resourceType = file.type === "application/pdf" ? "raw" : "image";
+  const sign = await getSignature("document");
+  const result = await uploadToCloudinary(file, sign, resourceType);
+
+  return {
+    url: result.secure_url,
+    fileName: file.name,
+  };
+}

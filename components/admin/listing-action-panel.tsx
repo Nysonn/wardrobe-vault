@@ -28,6 +28,13 @@ type ActionConfig = {
 
 const ACTION_CONFIGS: ActionConfig[] = [
   {
+    action: "start-review",
+    label: "Start review",
+    toStatus: LS.UNDER_REVIEW,
+    variant: "outline",
+    confirmText: "Marks this submission as actively under review.",
+  },
+  {
     action: "approve",
     label: "Approve",
     toStatus: LS.APPROVED,

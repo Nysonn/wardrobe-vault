@@ -50,6 +50,12 @@ export const listingImageInputSchema = z.object({
   altText: z.string().trim().max(200).optional(),
 });
 
+/** Draft saves may omit dimensions; Cloudinary re-validates before persisting. */
+export const listingImageDraftInputSchema = listingImageInputSchema.extend({
+  width: z.number().int().positive().optional(),
+  height: z.number().int().positive().optional(),
+});
+
 export const listingDocumentInputSchema = z.object({
   type: listingDocumentTypeSchema,
   cloudinaryPublicId: z.string().trim().min(1),
@@ -120,7 +126,7 @@ export const listingDraftInputSchema = z
     timesWorn: z.number().int().min(0).max(9999).optional(),
     storyDetails: z.string().trim().max(5000).optional(),
     authenticityNotes: z.string().trim().max(3000).optional(),
-    images: z.array(listingImageInputSchema).max(LISTING_IMAGE_MAX_COUNT).optional(),
+    images: z.array(listingImageDraftInputSchema).max(LISTING_IMAGE_MAX_COUNT).optional(),
     documents: z.array(listingDocumentInputSchema).max(LISTING_DOCUMENT_MAX_COUNT).optional(),
     shipping: shippingDetailInputSchema.partial().optional(),
   })
@@ -149,6 +155,7 @@ export const listingSubmitInputSchema = listingCoreFieldsSchema
   );
 
 export type ListingImageInput = z.infer<typeof listingImageInputSchema>;
+export type ListingImageDraftInput = z.infer<typeof listingImageDraftInputSchema>;
 export type ListingDocumentInput = z.infer<typeof listingDocumentInputSchema>;
 export type ShippingDetailInput = z.infer<typeof shippingDetailInputSchema>;
 export type ListingDraftInput = z.infer<typeof listingDraftInputSchema>;

@@ -13,7 +13,7 @@ import {
   assertListingEditable,
   assertSellerOwnsListing,
 } from "./access";
-import { ListingServiceError } from "./errors";
+import { ListingServiceError, formatListingValidationError } from "./errors";
 import { updateListingDraft } from "./update";
 import { transitionListingStatus } from "./transitionStatus";
 
@@ -28,10 +28,23 @@ export async function submitListingForReview({
   listingId,
   data,
 }: SubmitListingInput) {
-  const parsed = listingSubmitInputSchema.safeParse(data);
+  const normalizedImages = data.images?.length
+    ? await validateListingImagesForUser(sellerId, data.images)
+    : data.images;
+
+  const parsed = listingSubmitInputSchema.safeParse({
+    ...data,
+    images: normalizedImages,
+    documents: data.documents ?? [],
+    shipping: data.shipping ?? {
+      isAvailable: true,
+      regions: [],
+      fee: 0,
+    },
+  });
   if (!parsed.success) {
     throw new ListingServiceError(
-      parsed.error.issues[0]?.message ?? "Complete all required fields before submitting.",
+      formatListingValidationError(parsed.error),
     );
   }
 
@@ -40,7 +53,7 @@ export async function submitListingForReview({
   assertListingEditable(owned.status);
   await assertCategoryExists(input.categoryId);
 
-  const images = await validateListingImagesForUser(sellerId, input.images);
+  const images = input.images;
   const documents = await validateListingDocumentsForUser(
     sellerId,
     input.documents ?? [],

@@ -40,12 +40,12 @@ export function LoginForm({ callbackUrl, registered }: LoginFormProps) {
       <form action={formAction}>
         <CardContent className="space-y-4">
           {registered ? (
-            <p className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
+            <p className="rounded-sm border border-border bg-muted px-3 py-2 text-sm text-foreground">
               Your account is ready. Sign in to continue.
             </p>
           ) : null}
           {state.error ? (
-            <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800 dark:border-red-900 dark:bg-red-950 dark:text-red-200">
+            <p className="rounded-sm border border-destructive/20 bg-destructive/5 px-3 py-2 text-sm text-destructive">
               {state.error}
             </p>
           ) : null}
@@ -77,9 +77,9 @@ export function LoginForm({ callbackUrl, registered }: LoginFormProps) {
           <Button type="submit" className="w-full" disabled={pending}>
             {pending ? "Signing in…" : "Sign in"}
           </Button>
-          <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-center text-sm text-muted-foreground">
             New here?{" "}
-            <Link href="/register" className="font-medium text-zinc-900 dark:text-zinc-100">
+            <Link href="/register" className="font-medium text-foreground">
               Create an account
             </Link>
           </p>

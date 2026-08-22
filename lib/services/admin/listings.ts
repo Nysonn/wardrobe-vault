@@ -1,11 +1,13 @@
 import { ListingStatus } from "@/lib/generated/prisma/enums";
 import { prisma } from "@/lib/prisma";
+import { createNotification } from "@/lib/services/notifications";
 import { canTransitionListing } from "@/lib/services/listings/stateMachine";
 import { transitionListingStatus } from "@/lib/services/listings/transitionStatus";
 
-export type AdminListingTab = "submitted" | "under-review" | "approved" | "all";
+export type AdminListingTab = "pending" | "approved" | "all";
 
 export type AdminListingAction =
+  | "start-review"
   | "approve"
   | "reject"
   | "request-changes"
@@ -22,10 +24,8 @@ export class AdminListingError extends Error {
 
 function tabToStatuses(tab: AdminListingTab): ListingStatus[] {
   switch (tab) {
-    case "submitted":
-      return [ListingStatus.SUBMITTED];
-    case "under-review":
-      return [ListingStatus.UNDER_REVIEW];
+    case "pending":
+      return [ListingStatus.SUBMITTED, ListingStatus.UNDER_REVIEW];
     case "approved":
       return [ListingStatus.APPROVED];
     case "all":
@@ -38,24 +38,23 @@ function tabToStatuses(tab: AdminListingTab): ListingStatus[] {
         ListingStatus.REJECTED,
       ];
     default:
-      return [ListingStatus.SUBMITTED];
+      return [ListingStatus.SUBMITTED, ListingStatus.UNDER_REVIEW];
   }
 }
 
 export async function getAdminListingQueueCounts() {
-  const tabs: AdminListingTab[] = ["submitted", "under-review", "approved"];
-  const counts = await Promise.all(
-    tabs.map(async (tab) => {
-      const count = await prisma.listing.count({
-        where: { status: { in: tabToStatuses(tab) } },
-      });
-      return [tab, count] as const;
-    }),
-  );
-  return Object.fromEntries(counts) as Record<
-    Exclude<AdminListingTab, "all">,
-    number
-  >;
+  const [submitted, underReview, approved] = await Promise.all([
+    prisma.listing.count({ where: { status: ListingStatus.SUBMITTED } }),
+    prisma.listing.count({ where: { status: ListingStatus.UNDER_REVIEW } }),
+    prisma.listing.count({ where: { status: ListingStatus.APPROVED } }),
+  ]);
+
+  return {
+    pending: submitted + underReview,
+    submitted,
+    "under-review": underReview,
+    approved,
+  } as const;
 }
 
 export async function getAdminListingQueue(tab: AdminListingTab) {
@@ -122,6 +121,8 @@ function actionToStatus(
   action: AdminListingAction,
 ): ListingStatus | null {
   switch (action) {
+    case "start-review":
+      return ListingStatus.UNDER_REVIEW;
     case "approve":
       return ListingStatus.APPROVED;
     case "reject":
@@ -139,6 +140,7 @@ function actionToStatus(
 
 /** Human-readable admin action labels for the audit log. */
 const ACTION_LABELS: Record<AdminListingAction, string> = {
+  "start-review": "Listing review started",
   approve: "Listing approved",
   reject: "Listing rejected",
   "request-changes": "Changes requested on listing",
@@ -230,11 +232,9 @@ export async function performAdminListingAction({
     reason,
   );
   if (sellerNotification) {
-    await prisma.notification.create({
-      data: {
-        userId: listing.sellerId,
-        ...sellerNotification,
-      },
+    await createNotification({
+      userId: listing.sellerId,
+      ...sellerNotification,
     });
   }
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   getCommissionFormOptions,
   getCommissionSettings,
@@ -24,7 +26,13 @@ export default async function AdminCommissionSettingsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-2xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
+        <Link
+          href="/admin/settings"
+          className="text-xs uppercase tracking-[0.14em] text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+        >
+          ← Settings
+        </Link>
+        <h2 className="mt-3 text-2xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
           Commission settings
         </h2>
         <p className="mt-1 max-w-2xl text-sm text-zinc-500 dark:text-zinc-400">

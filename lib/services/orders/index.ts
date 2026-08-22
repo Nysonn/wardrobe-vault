@@ -8,3 +8,5 @@ export { getCheckoutPreview } from "./getCheckoutPreview";
 export type { CheckoutPreview } from "./getCheckoutPreview";
 export { getOrderForBuyer, listOrdersForBuyer } from "./getOrder";
 export { resolveCommissionRate } from "./resolveCommissionRate";
+export { transitionOrderStatus } from "./transitionOrderStatus";
+export type { TransitionOrderStatusInput } from "./transitionOrderStatus";

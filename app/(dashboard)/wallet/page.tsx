@@ -60,8 +60,8 @@ export default async function WalletPage() {
         {payouts.length === 0 ? (
           <EmptyState
             className="mt-12"
-            title="No sales yet"
-            description="When a piece sells, the full financial breakdown will appear here — sale amount, commission, net earnings, and payout status."
+            title="Nothing sold yet."
+            description="When a piece sells, the full breakdown — sale amount, commission, net earnings, and payout status — will appear here."
             action={
               <Link
                 href="/sell/new"

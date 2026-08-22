@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { VerificationBadge } from "@/components/brand/verification-badge";
 import { cn } from "@/lib/utils";
+import { formatUgx } from "@/lib/format/currency";
 import type { PublicListingCard } from "@/lib/services/listings/public";
 
 type ItemCardProps = {
@@ -10,12 +11,8 @@ type ItemCardProps = {
   className?: string;
 };
 
-function formatPrice(price: number, currency: string) {
-  return new Intl.NumberFormat("en-UG", {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0,
-  }).format(price);
+function formatPrice(price: number) {
+  return formatUgx(price);
 }
 
 /**
@@ -100,7 +97,7 @@ export function ItemCard({ listing, className }: ItemCardProps) {
         {/* Price + seller */}
         <div className="mt-1 flex items-baseline justify-between gap-2">
           <span className="font-heading text-sm text-foreground">
-            {formatPrice(listing.price, listing.currency)}
+            {formatPrice(listing.price)}
           </span>
           {listing.seller.name && (
             <span className="truncate text-[10px] text-muted-foreground">
